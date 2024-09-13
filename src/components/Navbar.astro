@@ -1,0 +1,50 @@
+---
+// components/Navbar.astro
+---
+
+<nav class="bg-white shadow-md rounded">
+    <div class=" max-xl mx-auto p-2">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0">
+                <a href="/" class="text-2xl font-bold text-gray-800 flex items-center rounded">
+                    <img src="/images/logo.png" alt="Kanari Blog Logo" class="h-8 w-8 mr-2 rounded" />
+                    Kanari Blog
+                </a>
+            </div>
+            <div class="sm:hidden">
+                <button id="mobile-menu-button" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg class="h-6 w-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden sm:flex sm:items-center sm:space-x-4">
+                <button onclick="window.open('https://github.com', '_blank', 'noopener noreferrer')" class="bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
+                    <i class="fab fa-github mr-2"></i>
+                    GitHub
+                </button>
+                <button onclick="window.open('https://x.com', '_blank', 'noopener noreferrer')" class="bg-black text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
+                    <i class="fab fa-sharp fa-solid fa-x mr-2"></i>
+                    X.com
+                </button>
+                <button onclick="window.open('https://discord.com', '_blank', 'noopener noreferrer')" class="bg-indigo-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
+                    <i class="fab fa-discord mr-2"></i>
+                    Discord
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden hidden bg-gray-100 rounded">
+        <div class="px-2 py-3 flex justify-center space-x-4">
+            <button onclick="window.open('https://github.com', '_blank', 'noopener noreferrer')" class="text-gray-800 hover:bg-gray-700 hover:text-white p-2 rounded-full">
+                <i class="fab fa-github text-xl"></i>
+            </button>
+            <button onclick="window.open('https://x.com', '_blank', 'noopener noreferrer')" class=" text-black hover:bg-black hover:text-white p-2 rounded-full">
+                <i class="fab fa-sharp fa-solid fa-x text-xl"></i>
+            </button>
+            <button onclick="window.open('https://discord.com', '_blank', 'noopener noreferrer')" class="text-indigo-500 hover:bg-indigo-500 hover:text-white p-2 rounded-full">
+                <i class="fab fa-discord text-xl"></i>
+            </button>
+        </div>
+    </div>
+</nav>

@@ -1,67 +1,39 @@
 ---
 import BlogPostLink from "../components/BlogPostLink.astro";
+import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Kanari Blog">
-	<nav class="bg-white shadow-md">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="flex justify-between h-16">
-				<div class="flex">
-				  <div class="flex-shrink-0 sm:ml-6 sm:flex sm:items-center">
-					<a href="/" class="text-2xl font-bold text-gray-800 flex items-center">
-					  <img src="/images/logo.png" alt="Kanari Blog Logo" class="h-8 w-8 mr-2" />
-					  Kanari Blog
-					</a>
-				  </div>
-				</div>
-				<div class="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
-				<div class="flex space-x-4">
-				  <button
-					onclick="window.open('https://github.com', '_blank', 'noopener noreferrer')"
-					class="bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center"
-				  >
-					<i class="fab fa-github mr-2"></i>
-					GitHub
-				  </button>
-				  <button
-					onclick="window.open('https://x.com', '_blank', 'noopener noreferrer')"
-					class="bg-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center"
-				  >
-					<i class="fab fa-x-twitter mr-2"></i>
-					X.com
-				  </button>
-				  <button
-					onclick="window.open('https://discord.com', '_blank', 'noopener noreferrer')"
-					class="bg-indigo-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center"
-				  >
-					<i class="fab fa-discord mr-2"></i>
-					Discord
-				  </button>
-				</div>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<div class="p-4">
+	<Navbar />
 
-	<main class="p-6">
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
+	<main class="p-4 sm:p-6">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 			<BlogPostLink
-			  href="/blog01"
-			  imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
-			  imgAlt="EP1 Image"
-			  title="Kanari SDK Design"
-			  description="Explore the design principles and architecture of the Kanari SDK in this detailed blog post."
+				href="/blog01"
+				imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
+				imgAlt="EP1 Image"
+				title="Kanari SDK Design"
+				description="Explore the design principles and architecture of the Kanari SDK in this detailed blog post."
 			/>
-			
+
 			<BlogPostLink
-			  href="/blog02"
-			  imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari2.png"
-			  imgAlt="EP2 Image"
-			  title="Kanari SDK Implementation"
-			  description="Dive into the implementation details of the Kanari SDK in this comprehensive blog post."
+				href="/blog02"
+				imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari2.png"
+				imgAlt="EP2 Image"
+				title="Kanari SDK Implementation"
+				description="Dive into the implementation details of the Kanari SDK in this comprehensive blog post."
 			/>
 		</div>
 	</main>
+
+	<script is:inline>
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+		const mobileMenu = document.getElementById('mobile-menu');
+
+		mobileMenuButton.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden');
+		});
+	</script>
 </Layout>

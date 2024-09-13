@@ -1,27 +1,69 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="bg-gray-100 p-6">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold mb-4">blog Kari</h1>
-      <img src="/path/to/your/image.jpg" alt="Blog Image" class="mx-auto mb-6 rounded-lg shadow-lg">
-    </div>
-	<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-	  <a href="/blog01" class="block p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-		<img src="/path/to/image1.jpg" alt="EP1 Image" class="w-full h-48 object-cover rounded-t-lg">
-		<p class="text-lg mt-2">การสร้าง ep1 <span class="text-blue-500 hover:underline">blog</span>!</p>
-	  </a>
-	  <a href="/blog02" class="block p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-		<img src="/path/to/image2.jpg" alt="EP2 Image" class="w-full h-48 object-cover rounded-t-lg">
-		<p class="text-lg mt-2">การสร้าง ep2 <span class="text-blue-500 hover:underline">blog</span>!</p>
-	  </a>
-	  <a href="/blog03" class="block p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-		<img src="/path/to/image3.jpg" alt="EP3 Image" class="w-full h-48 object-cover rounded-t-lg">
-		<p class="text-lg mt-2">การสร้าง ep3 <span class="text-blue-500 hover:underline">blog</span>!</p>
-	  </a>
-	</div>
-  </main>
+	<nav class="bg-white shadow-md">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between h-16">
+				<div class="flex">
+				  <div class="flex-shrink-0 sm:ml-6 sm:flex sm:items-center">
+					<a href="/" class="text-2xl font-bold text-gray-800 flex items-center">
+					  <img src="/path/to/logo.png" alt="Kanari Blog Logo" class="h-8 w-8 mr-2" />
+					  Kanari Blog
+					</a>
+				  </div>
+				</div>
+				<div class="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
+				<div class="flex space-x-4">
+				  <button
+					onclick="window.open('https://github.com', '_blank', 'noopener noreferrer')"
+					class="bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center"
+				  >
+					<i class="fab fa-github mr-2"></i>
+					GitHub
+				  </button>
+				  <button
+					onclick="window.open('https://x.com', '_blank', 'noopener noreferrer')"
+					class="bg-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center"
+				  >
+					<i class="fab fa-x-twitter mr-2"></i>
+					X.com
+				  </button>
+				  <button
+					onclick="window.open('https://discord.com', '_blank', 'noopener noreferrer')"
+					class="bg-indigo-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center"
+				  >
+					<i class="fab fa-discord mr-2"></i>
+					Discord
+				  </button>
+				</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<main class="p-6">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<card
+			  href="/blog01"
+			  class="block p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1"
+			>
+			  <div class="relative h-48 bg-black rounded-t-lg">
+				<img
+				  src="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
+				  alt="EP1 Image"
+				  class="w-full h-full object-cover rounded-t-lg"
+				/>
+				<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-t-lg"></div>
+				<div class="absolute bottom-0 left-0 p-4">
+				  <p class="text-lg text-white font-semibold">Kanari SDK Design</p>
+				</div>
+			  </div>
+			  <div class="mt-4">
+				<p class="text-gray-700">Explore the design principles and architecture of the Kanari SDK in this detailed blog post.</p>
+			  </div>
+			</card>
+		</div>
+	</main>
 </Layout>

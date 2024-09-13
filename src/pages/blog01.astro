@@ -1,13 +1,24 @@
 ---
+import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="My Blog">
-  <main>
-    <article>
-      <h1>Welcome to My Blog</h1>
-      <p>This is the first post on my new blog built with Astro!</p>
-    </article>
-    <!-- Add more blog posts here -->
-  </main>
+<Layout title="Kanari SDK Design">
+  <div class="p-4">
+    <Navbar />
+
+    <main>
+      <article>
+        <h1>Kanari SDK Design</h1>
+        <img
+          src="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
+          alt="EP1 Image"
+        />
+        <p>
+          Explore the design principles and architecture of the Kanari SDK in
+          this detailed blog post.
+        </p>
+      </article>
+    </main>
+  </div>
 </Layout>

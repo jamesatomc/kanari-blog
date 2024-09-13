@@ -6,34 +6,38 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Kanari Blog">
 	<div class="p-4">
-	<Navbar />
+		<Navbar />
 
-	<main class="p-4 sm:p-6">
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-			<BlogPostLink
-				href="/blog01"
-				imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
-				imgAlt="EP1 Image"
-				title="Kanari SDK Design"
-				description="Explore the design principles and architecture of the Kanari SDK in this detailed blog post."
-			/>
+		<main class="p-4 sm:p-6">
+			<div
+				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+			>
+				<BlogPostLink
+					href="/blog01"
+					imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
+					imgAlt="EP1 Image"
+					title="Kanari SDK Design"
+					description="Explore the design principles and architecture of the Kanari SDK in this detailed blog post."
+				/>
 
-			<BlogPostLink
-				href="/blog02"
-				imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari2.png"
-				imgAlt="EP2 Image"
-				title="Kanari SDK Implementation"
-				description="Dive into the implementation details of the Kanari SDK in this comprehensive blog post."
-			/>
-		</div>
-	</main>
+				<BlogPostLink
+					href="/blog02"
+					imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari2.png"
+					imgAlt="EP2 Image"
+					title="Kanari SDK Implementation"
+					description="Dive into the implementation details of the Kanari SDK in this comprehensive blog post."
+				/>
+			</div>
+		</main>
 
-	<script is:inline>
-		const mobileMenuButton = document.getElementById('mobile-menu-button');
-		const mobileMenu = document.getElementById('mobile-menu');
+		<script is:inline>
+			const mobileMenuButton =
+				document.getElementById("mobile-menu-button");
+			const mobileMenu = document.getElementById("mobile-menu");
 
-		mobileMenuButton.addEventListener('click', () => {
-			mobileMenu.classList.toggle('hidden');
-		});
-	</script>
-</Layout>
+			mobileMenuButton.addEventListener("click", () => {
+				mobileMenu.classList.toggle("hidden");
+			});
+		</script>
+	</div></Layout
+>

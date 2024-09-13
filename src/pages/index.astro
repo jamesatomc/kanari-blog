@@ -1,4 +1,5 @@
 ---
+import BlogPostLink from "../components/BlogPostLink.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -45,25 +46,22 @@ import Layout from "../layouts/Layout.astro";
 
 	<main class="p-6">
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-			<card
+
+			<BlogPostLink
 			  href="/blog01"
-			  class="block p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1"
-			>
-			  <div class="relative h-48 bg-black rounded-t-lg">
-				<img
-				  src="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
-				  alt="EP1 Image"
-				  class="w-full h-full object-cover rounded-t-lg"
-				/>
-				<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-t-lg"></div>
-				<div class="absolute bottom-0 left-0 p-4">
-				  <p class="text-lg text-white font-semibold">Kanari SDK Design</p>
-				</div>
-			  </div>
-			  <div class="mt-4">
-				<p class="text-gray-700">Explore the design principles and architecture of the Kanari SDK in this detailed blog post.</p>
-			  </div>
-			</card>
+			  imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
+			  imgAlt="EP1 Image"
+			  title="Kanari SDK Design"
+			  description="Explore the design principles and architecture of the Kanari SDK in this detailed blog post."
+			/>
+			
+			<BlogPostLink
+			  href="/blog02"
+			  imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari2.png"
+			  imgAlt="EP2 Image"
+			  title="Kanari SDK Implementation"
+			  description="Dive into the implementation details of the Kanari SDK in this comprehensive blog post."
+			/>
 		</div>
 	</main>
 </Layout>

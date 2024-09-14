@@ -1,6 +1,5 @@
-# Explore the design principles and architecture of the Kanari SDK in this detailed blog post.
 
-## Understanding k1, k2, and moveOS Nodes
+## Understanding k1, k2, and moveOS 
 
 The Kanari SDK utilizes a node-based architecture to manage its operations efficiently. Three critical nodes in this architecture are the **k1**, **k2**, and **moveOS** nodes.
 

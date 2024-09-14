@@ -1,4 +1,5 @@
 ---
+import BlogPostLink from "../components/BlogPostLink.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
@@ -31,8 +32,37 @@ const contentHtml = await processMarkdown(markdownContent);
         />
         <div class="markdown-content" set:html={contentHtml} />
       </article>
-    </main>
+      
+      <div class="h-20"></div>
 
+      <div class="backdrop-blur-md bg-opacity-50  w-full shadow-lg rounded-lg p-6">
+        <div class="max-w-7xl mx-auto">
+          <h1
+            class="text-4xl font-bold mb-8 text-gray-800 dark:text-gray-100 text-center"
+          >
+            What’s New at Kanari
+          </h1>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            <BlogPostLink
+              href="/Kanari_SDK_Design"
+              imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
+              imgAlt="EP1 Image"
+              title="Kanari SDK Design"
+              description="Explore the design principles and architecture of the Kanari SDK in this detailed blog post."
+            />
+
+            <BlogPostLink
+              href="/blog02"
+              imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari2.png"
+              imgAlt="EP2 Image"
+              title="Kanari SDK Implementation"
+              description="Dive into the implementation details of the Kanari SDK in this comprehensive blog post."
+            />
+          </div>
+        </div>
+      </card>
+
+    </main>
     <Footer />
   </div>
 </Layout>

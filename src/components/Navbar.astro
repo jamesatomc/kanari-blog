@@ -2,139 +2,148 @@
 // components/Navbar.astro
 ---
 
-<div class="p-4">
-  <nav class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-md rounded z-50"> 
-      <div class="max-xl mx-auto p-2">
-          <div class="flex justify-between items-center h-16">
-              <div class="flex-shrink-0">
-                  <a
-                      href="/"
-                      class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center rounded"
-                  >
-                      <img
-                          src="/images/logo.png"
-                          alt="Kanari Blog Logo"
-                          class="h-8 w-8 mr-2 rounded"
-                      />
-                      Kanari Blog
-                  </a>
-              </div>
-              <div class="flex items-center sm:space-x-4">
-                  <div class="sm:hidden">
-                      <button
-                          id="mobile-menu-button"
-                          class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                      >
-                          <svg
-                              class="h-6 w-6 text-gray-800 dark:text-gray-100"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                          >
-                              <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M4 6h16M4 12h16m-7 6h7"></path>
-                          </svg>
-                      </button>
-                  </div>
-                  <div class="hidden sm:flex sm:items-center sm:space-x-4">
-                      <button
-                          onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
-                          class="bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-700"
-                      >
-                          <i class="fab fa-github mr-2"></i>
-                          GitHub
-                      </button>
-                      <button
-                          onclick="window.open('https://x.com/Kanari_Network', '_blank', 'noopener noreferrer')"
-                          class="bg-black text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-900"
-                      >
-                          <i class="fab fa-sharp fa-solid fa-x mr-2"></i>
-                          X.com
-                      </button>
-                      <button
-                          onclick="window.open('https://discord.gg/Gr86hPwB', '_blank', 'noopener noreferrer')"
-                          class="bg-indigo-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-indigo-600"
-                      >
-                          <i class="fab fa-discord mr-2"></i>
-                          Discord
-                      </button>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div id="mobile-menu" class="sm:hidden hidden bg-gray-100 dark:bg-gray-700 rounded">
-          <div class="px-2 py-3 flex justify-center space-x-4">
-              <button
-                  onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
-                  class="text-gray-800 dark:text-gray-100 hover:bg-gray-700 dark:hover:bg-gray-600 hover:text-white p-2 rounded-full"
-              >
-                  <i class="fab fa-github text-xl"></i>
-              </button>
-              <button
-                  onclick="window.open('https://x.com/Kanari_Network', '_blank', 'noopener noreferrer')"
-                  class="text-black dark:text-gray-100 hover:bg-black dark:hover:bg-gray-600 hover:text-white p-2 rounded-full"
-              >
-                  <i class="fab fa-sharp fa-solid fa-x text-xl"></i>
-              </button>
-              <button
-                  onclick="window.open('https://discord.gg/Gr86hPwB', '_blank', 'noopener noreferrer')"
-                  class="text-indigo-500 dark:text-indigo-300 hover:bg-indigo-500 dark:hover:bg-indigo-400 hover:text-white p-2 rounded-full"
-              >
-                  <i class="fab fa-discord text-xl"></i>
-              </button>
-          </div>
-      </div>
-  </nav>
-</div>
+<nav
+    class="mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-lg transition-all duration-300 w-[calc(100%-40px)] m-2 backdrop-blur-md bg-opacity-80 shadow-lg z-20"
+>
+    <div class="flex justify-between items-center">
+        <div class="flex-shrink-0">
+            <a
+                href="/"
+                class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center rounded"
+            >
+                <img
+                    src="/images/logo.png"
+                    alt="Kanari Blog Logo"
+                    class="h-8 w-8 mr-2 rounded"
+                />
+                Kanari Blog
+            </a>
+        </div>
+        <div class="flex items-center sm:space-x-4">
+            <div class="sm:hidden">
+                <button
+                    id="mobile-menu-button"
+                    class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                    <svg
+                        class="h-6 w-6 text-gray-800 dark:text-gray-100"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden sm:flex sm:items-center sm:space-x-4">
+                <button
+                    onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
+                    class="bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-700"
+                >
+                    <i class="fab fa-github mr-2"></i>
+                    GitHub
+                </button>
+                <button
+                    onclick="window.open('https://x.com/Kanari_Network', '_blank', 'noopener noreferrer')"
+                    class="bg-black text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-900"
+                >
+                    <i class="fab fa-sharp fa-solid fa-x mr-2"></i>
+                    X.com
+                </button>
+                <button
+                    onclick="window.open('https://discord.gg/Gr86hPwB', '_blank', 'noopener noreferrer')"
+                    class="bg-indigo-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-indigo-600"
+                >
+                    <i class="fab fa-discord mr-2"></i>
+                    Discord
+                </button>
+            </div>
+        </div>
+    </div>
+    <div
+        id="mobile-menu"
+        class="sm:hidden hiddenrounded mt-2"
+    >
+        <div class="px-2 py-3 flex justify-center space-x-4">
+            <button
+                onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
+                class="text-gray-800 dark:text-gray-100 hover:bg-gray-700 dark:hover:bg-gray-600 hover:text-white p-2 rounded-full"
+            >
+                <i class="fab fa-github text-xl"></i>
+            </button>
+            <button
+                onclick="window.open('https://x.com/Kanari_Network', '_blank', 'noopener noreferrer')"
+                class="text-black dark:text-gray-100 hover:bg-black dark:hover:bg-gray-600 hover:text-white p-2 rounded-full"
+            >
+                <i class="fab fa-sharp fa-solid fa-x text-xl"></i>
+            </button>
+            <button
+                onclick="window.open('https://discord.gg/Gr86hPwB', '_blank', 'noopener noreferrer')"
+                class="text-indigo-500 dark:text-indigo-300 hover:bg-indigo-500 dark:hover:bg-indigo-400 hover:text-white p-2 rounded-full"
+            >
+                <i class="fab fa-discord text-xl"></i>
+            </button>
+        </div>
+    </div>
+</nav>
 
 <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon",
+    );
+    const themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon",
+    );
 
-    console.log('themeToggle:', themeToggle);
-    console.log('themeToggleDarkIcon:', themeToggleDarkIcon);
-    console.log('themeToggleLightIcon:', themeToggleLightIcon);
+    console.log("themeToggle:", themeToggle);
+    console.log("themeToggleDarkIcon:", themeToggleDarkIcon);
+    console.log("themeToggleLightIcon:", themeToggleLightIcon);
 
     if (themeToggle && themeToggleDarkIcon && themeToggleLightIcon) {
         // Check if user has a preference for dark/light mode
         if (
-            localStorage.theme === 'dark' ||
-            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
-            console.log('Setting dark mode');
-            document.documentElement.classList.add('dark');
-            themeToggleLightIcon.classList.remove('hidden');
-            themeToggleDarkIcon.classList.add('hidden');
+            console.log("Setting dark mode");
+            document.documentElement.classList.add("dark");
+            themeToggleLightIcon.classList.remove("hidden");
+            themeToggleDarkIcon.classList.add("hidden");
         } else {
-            console.log('Setting light mode');
-            document.documentElement.classList.remove('dark');
-            themeToggleLightIcon.classList.add('hidden');
-            themeToggleDarkIcon.classList.remove('hidden');
+            console.log("Setting light mode");
+            document.documentElement.classList.remove("dark");
+            themeToggleLightIcon.classList.add("hidden");
+            themeToggleDarkIcon.classList.remove("hidden");
         }
 
-        themeToggle.addEventListener('click', () => {
-            console.log('Theme toggle clicked');
-            document.documentElement.classList.toggle('dark');
+        themeToggle.addEventListener("click", () => {
+            console.log("Theme toggle clicked");
+            document.documentElement.classList.toggle("dark");
 
             // Toggle icons inside the button
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
+            themeToggleDarkIcon.classList.toggle("hidden");
+            themeToggleLightIcon.classList.toggle("hidden");
 
             // Save user preference
-            if (document.documentElement.classList.contains('dark')) {
-                console.log('Saving dark mode preference');
-                localStorage.theme = 'dark';
+            if (document.documentElement.classList.contains("dark")) {
+                console.log("Saving dark mode preference");
+                localStorage.theme = "dark";
             } else {
-                console.log('Saving light mode preference');
-                localStorage.theme = 'light';
+                console.log("Saving light mode preference");
+                localStorage.theme = "light";
             }
         });
     } else {
-        console.error('One or more elements are missing: theme-toggle, theme-toggle-dark-icon, theme-toggle-light-icon');
+        console.error(
+            "One or more elements are missing: theme-toggle, theme-toggle-dark-icon, theme-toggle-light-icon",
+        );
     }
 </script>

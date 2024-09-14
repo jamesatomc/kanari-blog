@@ -9,22 +9,20 @@ import Layout from "../layouts/Layout.astro";
   <div class="flex flex-col min-h-screen">
     <Navbar />
   
-      <main class="flex-grow p-4 sm:p-6 lg:p-8 bg-gray-50">
-        <article
-          class="max-w-4xl mx-auto b bg-gray-900 p-6 rounded-lg shadow-md"
-        >
-          <h1 class="text-3xl font-bold mb-4 text-white">Kanari SDK Design</h1>
-          <img
-            src="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
-            alt="EP1 Image"
-            class="w-full h-auto rounded-lg mb-4"
-          />
-          <p class="text-lg text-white leading-relaxed">
-            Explore the design principles and architecture of the Kanari SDK in
-            this detailed blog post.
-          </p>
-        </article>
-      </main>
+    <main class="flex-grow p-4 sm:p-6 lg:p-8 bg-gray-50 dark:bg-gray-900">
+      <article class="max-w-4xl mx-auto bg-gray-900 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-4 text-white dark:text-gray-100">Kanari SDK Design</h1>
+        <img
+          src="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
+          alt="EP1 Image"
+          class="w-full h-auto rounded-lg mb-4"
+        />
+        <p class="text-lg text-white dark:text-gray-300 leading-relaxed">
+          Explore the design principles and architecture of the Kanari SDK in
+          this detailed blog post.
+        </p>
+      </article>
+    </main>
   
     <Footer />
   </div>

@@ -4,20 +4,20 @@ const { href, imgSrc, imgAlt, title, description } = Astro.props;
 ---
 <a
   href={href}
-  class="block p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 hover:scale-105"
+  class="block p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 hover:scale-105"
 >
-  <div class="relative h-48 bg-black rounded-t-lg">
+  <div class="relative h-48 bg-black dark:bg-gray-900 rounded-t-lg">
     <img
       src={imgSrc}
       alt={imgAlt}
       class="w-full h-full object-cover rounded-t-lg"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-t-lg"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black dark:from-gray-900 to-transparent rounded-t-lg"></div>
     <div class="absolute bottom-0 left-0 p-4">
       <p class="text-lg text-white font-semibold">{title}</p>
     </div>
   </div>
   <div class="mt-4">
-    <p class="text-gray-700">{description}</p>
+    <p class="text-gray-700 dark:text-gray-300">{description}</p>
   </div>
 </a>

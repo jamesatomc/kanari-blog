@@ -68,7 +68,7 @@
     </div>
     <div
         id="mobile-menu"
-        class="sm:hidden hiddenrounded mt-2"
+        class="sm:hidden hidden mt-2 bg-gray-100 dark:bg-gray-700 rounded"
     >
         <div class="px-2 py-3 flex justify-center space-x-4">
             <button
@@ -93,57 +93,3 @@
     </div>
 </nav>
 
-<script>
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeToggleDarkIcon = document.getElementById(
-        "theme-toggle-dark-icon",
-    );
-    const themeToggleLightIcon = document.getElementById(
-        "theme-toggle-light-icon",
-    );
-
-    console.log("themeToggle:", themeToggle);
-    console.log("themeToggleDarkIcon:", themeToggleDarkIcon);
-    console.log("themeToggleLightIcon:", themeToggleLightIcon);
-
-    if (themeToggle && themeToggleDarkIcon && themeToggleLightIcon) {
-        // Check if user has a preference for dark/light mode
-        if (
-            localStorage.theme === "dark" ||
-            (!("theme" in localStorage) &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-            console.log("Setting dark mode");
-            document.documentElement.classList.add("dark");
-            themeToggleLightIcon.classList.remove("hidden");
-            themeToggleDarkIcon.classList.add("hidden");
-        } else {
-            console.log("Setting light mode");
-            document.documentElement.classList.remove("dark");
-            themeToggleLightIcon.classList.add("hidden");
-            themeToggleDarkIcon.classList.remove("hidden");
-        }
-
-        themeToggle.addEventListener("click", () => {
-            console.log("Theme toggle clicked");
-            document.documentElement.classList.toggle("dark");
-
-            // Toggle icons inside the button
-            themeToggleDarkIcon.classList.toggle("hidden");
-            themeToggleLightIcon.classList.toggle("hidden");
-
-            // Save user preference
-            if (document.documentElement.classList.contains("dark")) {
-                console.log("Saving dark mode preference");
-                localStorage.theme = "dark";
-            } else {
-                console.log("Saving light mode preference");
-                localStorage.theme = "light";
-            }
-        });
-    } else {
-        console.error(
-            "One or more elements are missing: theme-toggle, theme-toggle-dark-icon, theme-toggle-light-icon",
-        );
-    }
-</script>

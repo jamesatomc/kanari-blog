@@ -26,7 +26,7 @@
                     class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                     <svg
-                        class="h-6 w-6 text-gray-800 dark:text-gray-100 light-orange:text-orange-600"
+                        class="h-6 w-6 text-gray-800 dark:text-gray-100 light:text-purple-600"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -74,7 +74,7 @@
     </div>
     <div
         id="mobile-menu"
-        class="sm:hidden hidden mt-2 bg-gray-100 dark:bg-gray-700 light-orange:bg-orange-100 rounded"
+        class="sm:hidden hidden mt-2 light-orange:bg-orange-100 rounded "
     >
         <div class="px-2 py-3 flex justify-center space-x-4">
             <button
@@ -115,7 +115,7 @@
         const modeIcon = document.getElementById('mode-icon');
         const mobileModeToggle = document.getElementById('mobile-mode-toggle');
         const mobileModeIcon = document.getElementById('mobile-mode-icon');
-        const modes = ['dark', 'light-orange'];
+        const modes = ['dark', 'light'];
     
         // Function to get cookie by name
         function getCookie(name: string): string | null {
@@ -147,7 +147,7 @@
                 modeIcon?.classList.add('fa-moon');
                 mobileModeIcon?.classList.remove('fa-sun');
                 mobileModeIcon?.classList.add('fa-moon');
-            } else if (modes[currentModeIndex] === 'light-orange') {
+            } else if (modes[currentModeIndex] === 'light') {
                 modeIcon?.classList.remove('fa-moon');
                 modeIcon?.classList.add('fa-sun');
                 mobileModeIcon?.classList.remove('fa-moon');

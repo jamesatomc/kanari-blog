@@ -73,75 +73,42 @@ a:hover {
   background-color: #667eea;
 }
 
-/* Orange Mode */
-.orange .orange\:bg-orange-600 {
-  background-color: #dd6b20;
+
+/* Light Mode */
+.light body {
+  background-color: #f3e8ff;
+  color: #1a202c;
 }
-.orange .orange\:text-white {
+.light a {
+  color: #6b46c1;
+}
+.light a:hover {
+  color: #553c9a;
+}
+.light .light\:bg-50 {
+  background-color: #f3e8ff;
+}
+.light .light\:text-gray-800 {
+  color: #1a202c;
+}
+.light .light\:bg-100 {
+  background-color: #e9d8fd;
+}
+.light .light\:bg-200 {
+  background-color: #d6bcfa;
+}
+.light .light\:bg-300 {
+  background-color: #b794f4;
+}
+.light .light\:bg-400 {
+  background-color: #9f7aea;
+}
+.light .light\:text-white {
   color: #ffffff;
 }
-
-/* Light-Orange Mode */
-.light-orange body {
-  background-color: #fff7ed;
-  color: #1a202c;
+.light .light\:hover\:bg-gray-600:hover {
+  background-color: #718096;
 }
-.light-orange a {
-  color: #dd6b20;
-}
-.light-orange a:hover {
-  color: #c05621;
-}
-.light-orange .light-orange\:bg-orange-50 {
-  background-color: #fff7ed;
-}
-.light-orange .light-orange\:text-gray-800 {
-  color: #1a202c;
-}
-.light-orange .light-orange\:bg-orange-100 {
-  background-color: #ffedd5;
-}
-.light-orange .light-orange\:bg-orange-200 {
-  background-color: #fed7aa;
-}
-.light-orange .light-orange\:bg-orange-300 {
-  background-color: #fdba74;
-}
-.light-orange .light-orange\:bg-orange-400 {
-  background-color: #fb923c;
-}
-.light-orange .light-orange\:text-white {
-  color: #ffffff;
-}
-
-/* Enhancements for better visibility in light-orange mode */
-.light-orange .light-orange\:text-gray-900 {
-  color: #1a202c;
-}
-.light-orange .light-orange\:bg-orange-50 {
-  background-color: #fff7ed;
-}
-.light-orange .light-orange\:bg-orange-100 {
-  background-color: #ffedd5;
-}
-.light-orange .light-orange\:bg-orange-200 {
-  background-color: #fed7aa;
-}
-.light-orange .light-orange\:bg-orange-300 {
-  background-color: #fdba74;
-}
-.light-orange .light-orange\:bg-orange-400 {
-  background-color: #fb923c;
-}
-.light-orange .light-orange\:border {
-  border: 1px solid #e2e8f0;
-}
-.light-orange .light-orange\:hover\:bg-orange-500:hover {
-  background-color: #f97316;
-}
-.light-orange .light-orange\:hover\:text-gray-900:hover {
-  color: #1a202c;
-}
-.light-orange .light-orange\:hover\:border:hover {
-  border: 1px solid #cbd5e1;
+.light .light\:hover\:bg-indigo-400:hover {
+  background-color: #667eea;
 }

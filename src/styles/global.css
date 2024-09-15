@@ -43,7 +43,7 @@ a:hover {
   color: #f7fafc;
 }
 .dark a {
-  color: #63b3ed;
+  color: #d35400;
 }
 .dark a:hover {
   color: #4299e1;
@@ -76,39 +76,39 @@ a:hover {
 
 /* Light Mode */
 .light body {
-  background-color: #f3e8ff;
+  background-color: #fff5eb;
   color: #1a202c;
 }
 .light a {
-  color: #6b46c1;
+  color: #d35400;
 }
 .light a:hover {
-  color: #553c9a;
+  color: #a04000;
 }
 .light .light\:bg-50 {
-  background-color: #f3e8ff;
+  background-color: #fff5eb;
 }
 .light .light\:text-gray-800 {
   color: #1a202c;
 }
 .light .light\:bg-100 {
-  background-color: #e9d8fd;
+  background-color: #ffecd7;
 }
 .light .light\:bg-200 {
-  background-color: #d6bcfa;
+  background-color: #ffd3a8;
 }
 .light .light\:bg-300 {
-  background-color: #b794f4;
+  background-color: #ffb679;
 }
 .light .light\:bg-400 {
-  background-color: #9f7aea;
+  background-color: #ff9a4d;
 }
 .light .light\:text-white {
   color: #ffffff;
 }
-.light .light\:hover\:bg-gray-600:hover {
+.dark .light\:hover\:bg-gray-600:hover {
   background-color: #718096;
 }
-.light .light\:hover\:bg-indigo-400:hover {
+.dark .light\:hover\:bg-indigo-400:hover {
   background-color: #667eea;
 }

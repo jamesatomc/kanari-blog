@@ -9,7 +9,7 @@
         <div class="flex-shrink-0">
             <a
                 href="/"
-                class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center rounded"
+                class="text-2xl font-bold text-gray-800 dark:text-gray-900 light-orange:text-orange-600 flex items-center rounded"
             >
                 <img
                     src="/images/logo.png"
@@ -26,7 +26,7 @@
                     class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                     <svg
-                        class="h-6 w-6 text-gray-800 dark:text-gray-100"
+                        class="h-6 w-6 text-gray-800 dark:text-gray-100 light-orange:text-orange-600"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -44,52 +44,140 @@
             <div class="hidden sm:flex sm:items-center sm:space-x-4">
                 <button
                     onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
-                    class="bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-700"
+                    class="bg-gray-800 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-700 light-orange:bg-orange-600 light-orange:text-white"
                 >
                     <i class="fab fa-github mr-2"></i>
                     GitHub
                 </button>
                 <button
                     onclick="window.open('https://x.com/Kanari_Network', '_blank', 'noopener noreferrer')"
-                    class="bg-black text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-900"
+                    class="bg-black text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-900 light-orange:bg-orange-600 light-orange:text-white"
                 >
                     <i class="fab fa-sharp fa-solid fa-x mr-2"></i>
                     X.com
                 </button>
                 <button
                     onclick="window.open('https://discord.gg/Gr86hPwB', '_blank', 'noopener noreferrer')"
-                    class="bg-indigo-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-indigo-600"
+                    class="bg-indigo-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-indigo-600 light-orange:bg-orange-600 light-orange:text-white"
                 >
                     <i class="fab fa-discord mr-2"></i>
                     Discord
+                </button>
+                <button
+                    id="mode-toggle"
+                    class="relative bg-gray-200 text-gray-800 p-3 rounded-full flex items-center justify-center dark:bg-gray-800 dark:text-gray-100 light-orange:bg-orange-600 light-orange:text-white overflow-hidden transition-all duration-300 transform hover:scale-105"
+                >
+                    <i id="mode-icon" class="fas fa-moon relative z-10"></i>
                 </button>
             </div>
         </div>
     </div>
     <div
         id="mobile-menu"
-        class="sm:hidden hidden mt-2 bg-gray-100 dark:bg-gray-700 rounded"
+        class="sm:hidden hidden mt-2 bg-gray-100 dark:bg-gray-700 light-orange:bg-orange-100 rounded"
     >
         <div class="px-2 py-3 flex justify-center space-x-4">
             <button
                 onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
-                class="text-gray-800 dark:text-gray-100 hover:bg-gray-700 dark:hover:bg-gray-600 hover:text-white p-2 rounded-full"
+                class="relative text-gray-800 dark:text-gray-100 light-orange:text-gray-800 p-3 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:scale-105"
             >
-                <i class="fab fa-github text-xl"></i>
+                <span class="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-600 opacity-0 transition-opacity duration-300 hover:opacity-100 rounded-full"></span>
+                <i class="fab fa-github text-xl relative z-10"></i>
             </button>
             <button
                 onclick="window.open('https://x.com/Kanari_Network', '_blank', 'noopener noreferrer')"
-                class="text-black dark:text-gray-100 hover:bg-black dark:hover:bg-gray-600 hover:text-white p-2 rounded-full"
+                class="relative text-black dark:text-gray-100 light-orange:text-gray-800 p-3 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:scale-105"
             >
-                <i class="fab fa-sharp fa-solid fa-x text-xl"></i>
+                <span class="absolute inset-0 bg-gradient-to-r from-black to-gray-800 opacity-0 transition-opacity duration-300 hover:opacity-100 rounded-full"></span>
+                <i class="fab fa-sharp fa-solid fa-x text-xl relative z-10"></i>
             </button>
             <button
                 onclick="window.open('https://discord.gg/Gr86hPwB', '_blank', 'noopener noreferrer')"
-                class="text-indigo-500 dark:text-indigo-300 hover:bg-indigo-500 dark:hover:bg-indigo-400 hover:text-white p-2 rounded-full"
+                class="relative text-indigo-500 dark:text-indigo-300 light-orange:text-gray-800 p-3 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:scale-105"
             >
-                <i class="fab fa-discord text-xl"></i>
+                <span class="absolute inset-0 bg-gradient-to-r from-indigo-400 to-indigo-600 opacity-0 transition-opacity duration-300 hover:opacity-100 rounded-full"></span>
+                <i class="fab fa-discord text-xl relative z-10"></i>
+            </button>
+            <button
+                id="mobile-mode-toggle"
+                class="relative bg-gray-200 text-gray-800 p-3 rounded-full flex items-center justify-center dark:bg-gray-800 dark:text-gray-100 light-orange:bg-orange-600 light-orange:text-white overflow-hidden transition-all duration-300 transform hover:scale-105"
+            >
+                <span class="absolute inset-0 bg-gradient-to-r from-orange-400 to-pink-500 opacity-0 transition-opacity duration-300 hover:opacity-100 rounded-full"></span>
+                <i id="mobile-mode-icon" class="fas fa-moon relative z-10"></i>
             </button>
         </div>
     </div>
 </nav>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modeToggle = document.getElementById('mode-toggle');
+        const modeIcon = document.getElementById('mode-icon');
+        const mobileModeToggle = document.getElementById('mobile-mode-toggle');
+        const mobileModeIcon = document.getElementById('mobile-mode-icon');
+        const modes = ['default', 'dark', 'light-orange'];
+
+        // Function to get cookie by name
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+
+        // Function to set cookie
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = `expires=${d.toUTCString()}`;
+            document.cookie = `${name}=${value};${expires};path=/`;
+        }
+
+        // Get the current mode from cookies
+        let currentModeIndex = modes.indexOf(getCookie('mode'));
+        if (currentModeIndex === -1) currentModeIndex = 0;
+
+        // Apply the current mode
+        document.documentElement.classList.add(modes[currentModeIndex]);
+        updateIcons();
+
+        function updateIcons() {
+            if (modes[currentModeIndex] === 'dark') {
+                modeIcon.classList.remove('fa-sun');
+                modeIcon.classList.add('fa-moon');
+                mobileModeIcon.classList.remove('fa-sun');
+                mobileModeIcon.classList.add('fa-moon');
+            } else if (modes[currentModeIndex] === 'light-orange') {
+                modeIcon.classList.remove('fa-moon');
+                modeIcon.classList.add('fa-sun');
+                mobileModeIcon.classList.remove('fa-moon');
+                mobileModeIcon.classList.add('fa-sun');
+            } else {
+                modeIcon.classList.remove('fa-sun', 'fa-moon');
+                modeIcon.classList.add('fa-adjust');
+                mobileModeIcon.classList.remove('fa-sun', 'fa-moon');
+                mobileModeIcon.classList.add('fa-adjust');
+            }
+        }
+
+        function toggleMode() {
+            document.documentElement.classList.remove(modes[currentModeIndex]);
+            currentModeIndex = (currentModeIndex + 1) % modes.length;
+            document.documentElement.classList.add(modes[currentModeIndex]);
+            updateIcons();
+            setCookie('mode', modes[currentModeIndex], 7);
+        }
+
+        if (modeToggle) {
+            modeToggle.addEventListener('click', toggleMode);
+        } else {
+            console.error('Mode toggle button not found');
+        }
+
+        if (mobileModeToggle) {
+            mobileModeToggle.addEventListener('click', toggleMode);
+        } else {
+            console.error('Mobile mode toggle button not found');
+        }
+    });
+</script>

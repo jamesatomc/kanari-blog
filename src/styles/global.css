@@ -112,3 +112,48 @@ a:hover {
 .dark .light\:hover\:bg-indigo-400:hover {
   background-color: #667eea;
 }
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.5rem; /* Adjust the size as needed */
+}
+
+/* Add styles for code blocks */
+pre {
+  background-color: #2d2d2d; /* Dark background for code blocks */
+  color: #f8f8f2; /* Light text color */
+  padding: 1rem; /* Padding around code blocks */
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow-x: auto; /* Horizontal scrolling for long code lines */
+}
+
+/* Add styles for inline code */
+code {
+  background-color: #2d2d2d; /* Dark background for inline code */
+  color: #f8f8f2; /* Light text color */
+  padding: 0.2rem 0.4rem; /* Padding around inline code */
+  border-radius: 0.3rem; /* Rounded corners */
+}
+
+/* Optional: Add language-specific styles */
+.language-javascript {
+  color: #f1e05a; /* JavaScript code color */
+}
+
+.language-python {
+  color: #3572A5; /* Python code color */
+}
+
+.language-java {
+  color: #b07219; /* Java code color */
+}
+
+.language-rust {
+  color: #dea584; /* Rust code color */
+  code {
+    background-color: #000000; /* Dark background for Rust code */
+  }
+}
+
+/* Add more language-specific styles as needed */

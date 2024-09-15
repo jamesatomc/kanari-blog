@@ -2,8 +2,6 @@
 // components/Navbar.astro
 ---
 
-
-
 <nav
     class="mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-lg transition-all duration-300 w-[calc(100%-40px)] m-2 backdrop-blur-md bg-opacity-80 shadow-lg z-20"
 >
@@ -113,102 +111,68 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    const modeToggle = document.getElementById('mode-toggle');
-    const modeIcon = document.getElementById('mode-icon');
-    const mobileModeToggle = document.getElementById('mobile-mode-toggle');
-    const mobileModeIcon = document.getElementById('mobile-mode-icon');
-    const modes = ['default', 'dark', 'light-orange'];
-
-    // Function to get cookie by name
-    function getCookie(name: string) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) {
-            const part = parts.pop();
-            if (part) {
-                return part.split(';').shift();
-            }
+        const modeToggle = document.getElementById('mode-toggle');
+        const modeIcon = document.getElementById('mode-icon');
+        const mobileModeToggle = document.getElementById('mobile-mode-toggle');
+        const mobileModeIcon = document.getElementById('mobile-mode-icon');
+        const modes = ['dark', 'light-orange'];
+    
+        // Function to get cookie by name
+        function getCookie(name: string): string | null {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+            return null;
         }
-        return null;
-    }
-
-    // Function to set cookie
-    function setCookie(name: string, value: string, days: number) {
-        const d = new Date();
-        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = `expires=${d.toUTCString()}`;
-        document.cookie = `${name}=${value};${expires};path=/`;
-    }
-
-    // Get the current mode from cookies
-    let currentModeIndex = modes.indexOf(getCookie('mode') || 'default');
-    if (currentModeIndex === -1) currentModeIndex = 0;
-
-    // Apply the current mode
-    document.documentElement.classList.add(modes[currentModeIndex]);
-    updateIcons();
-
-    function updateIcons() {
-        if (modes[currentModeIndex] === 'dark') {
-            if (modeIcon) {
-                modeIcon.classList.remove('fa-sun');
-            }
-            if (modeIcon) {
-                modeIcon.classList.add('fa-moon');
-            }
-            if (mobileModeIcon) {
-                mobileModeIcon.classList.remove('fa-sun');
-            }
-            if (mobileModeIcon) {
-                mobileModeIcon.classList.add('fa-moon');
-            }
-        } else if (modes[currentModeIndex] === 'light-orange') {
-            if (modeIcon) {
-                modeIcon.classList.remove('fa-moon');
-            }
-            if (modeIcon) {
-                modeIcon.classList.add('fa-sun');
-            }
-            if (mobileModeIcon) {
-                mobileModeIcon.classList.remove('fa-moon');
-            }
-            if (mobileModeIcon) {
-                mobileModeIcon.classList.add('fa-sun');
-            }
-        } else {
-            if (modeIcon) {
-                modeIcon.classList.remove('fa-sun', 'fa-moon');
-            }
-            if (modeIcon) {
-                modeIcon.classList.add('fa-adjust');
-            }
-            if (mobileModeIcon) {
-                mobileModeIcon.classList.remove('fa-sun', 'fa-moon');
-            }
-            if (mobileModeIcon) {
-                mobileModeIcon.classList.add('fa-adjust');
-            }
+    
+        // Function to set cookie
+        function setCookie(name: string, value: string, days: number): void {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = `expires=${d.toUTCString()}`;
+            document.cookie = `${name}=${value};${expires};path=/`;
         }
-    }
-
-    function toggleMode() {
-        document.documentElement.classList.remove(modes[currentModeIndex]);
-        currentModeIndex = (currentModeIndex + 1) % modes.length;
+    
+        // Get the current mode from cookies
+        let currentModeIndex = modes.indexOf(getCookie('mode') || 'dark');
+        if (currentModeIndex === -1) currentModeIndex = 0;
+    
+        // Apply the current mode
         document.documentElement.classList.add(modes[currentModeIndex]);
         updateIcons();
-        setCookie('mode', modes[currentModeIndex], 7);
-    }
-
-    if (modeToggle) {
-        modeToggle.addEventListener('click', toggleMode);
-    } else {
-        console.error('Mode toggle button not found');
-    }
-
-    if (mobileModeToggle) {
-        mobileModeToggle.addEventListener('click', toggleMode);
-    } else {
-        console.error('Mobile mode toggle button not found');
-    }
-});
+    
+        function updateIcons(): void {
+            if (modes[currentModeIndex] === 'dark') {
+                modeIcon?.classList.remove('fa-sun');
+                modeIcon?.classList.add('fa-moon');
+                mobileModeIcon?.classList.remove('fa-sun');
+                mobileModeIcon?.classList.add('fa-moon');
+            } else if (modes[currentModeIndex] === 'light-orange') {
+                modeIcon?.classList.remove('fa-moon');
+                modeIcon?.classList.add('fa-sun');
+                mobileModeIcon?.classList.remove('fa-moon');
+                mobileModeIcon?.classList.add('fa-sun');
+            }
+        }
+    
+        function toggleMode(): void {
+            document.documentElement.classList.remove(modes[currentModeIndex]);
+            currentModeIndex = (currentModeIndex + 1) % modes.length;
+            document.documentElement.classList.add(modes[currentModeIndex]);
+            updateIcons();
+            setCookie('mode', modes[currentModeIndex], 7);
+        }
+    
+        if (modeToggle) {
+            modeToggle.addEventListener('click', toggleMode);
+        } else {
+            console.error('Mode toggle button not found');
+        }
+    
+        if (mobileModeToggle) {
+            mobileModeToggle.addEventListener('click', toggleMode);
+        } else {
+            console.error('Mobile mode toggle button not found');
+        }
+    });
 </script>

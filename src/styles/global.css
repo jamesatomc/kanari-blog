@@ -25,6 +25,29 @@ code {
     monospace;
 }
 
+/* Default Mode */
+body {
+  background-color: #ffffff;
+  color: #1a202c;
+}
+a {
+  color: #3182ce;
+}
+a:hover {
+  color: #2b6cb0;
+}
+
+/* Dark Mode */
+.dark body {
+  background-color: #1a202c;
+  color: #f7fafc;
+}
+.dark a {
+  color: #63b3ed;
+}
+.dark a:hover {
+  color: #4299e1;
+}
 .dark .dark\:bg-gray-800 {
   background-color: #2d3748;
 }
@@ -49,11 +72,25 @@ code {
 .dark .dark\:hover\:bg-indigo-400:hover {
   background-color: #667eea;
 }
+
+/* Orange Mode */
 .orange .orange\:bg-orange-600 {
   background-color: #dd6b20;
 }
 .orange .orange\:text-white {
   color: #ffffff;
+}
+
+/* Light-Orange Mode */
+.light-orange body {
+  background-color: #fff7ed;
+  color: #1a202c;
+}
+.light-orange a {
+  color: #dd6b20;
+}
+.light-orange a:hover {
+  color: #c05621;
 }
 .light-orange .light-orange\:bg-orange-50 {
   background-color: #fff7ed;

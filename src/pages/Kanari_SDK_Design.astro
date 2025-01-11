@@ -32,7 +32,9 @@ const contentHtml = await processMarkdown(markdownContent);
                   class="w-full h-auto"
               />
           </div>
-          <div class="markdown-content" set:html={contentHtml} />
+          <div class="markdown-body">
+            <div class="markdown-content" set:html={contentHtml} />
+          </div>
       </article>
       
       <div class="h-20"></div>

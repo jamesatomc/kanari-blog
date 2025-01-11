@@ -1,23 +1,22 @@
 ---
-// BlogPostLink.astro
 const { href, imgSrc, imgAlt, title, description } = Astro.props;
 ---
 <a
   href={href}
-  class="block p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 hover:scale-105"
+  class="block p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 hover:scale-105 bg-white dark:bg-gray-800"
 >
-  <div class="relative h-48 bg-black dark:bg-gray-900 rounded-t-lg">
+  <div class="relative h-48 bg-black dark:bg-gray-900 rounded-t-lg overflow-hidden">
     <img
       src={imgSrc}
       alt={imgAlt}
-      class="w-full h-full object-cover rounded-t-lg"
+      class="w-full h-full object-cover rounded-t-lg transition-transform duration-300 hover:scale-110"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black dark:from-gray-900 to-transparent rounded-t-lg"></div>
     <div class="absolute bottom-0 left-0 p-4">
-      <p class="text-lg  font-semibold">{title}</p>
+      <p class="text-lg font-semibold text-white">{title}</p>
     </div>
   </div>
   <div class="mt-4">
-    <p class="">{description}</p>
+    <p class="text-gray-700 dark:text-gray-300">{description}</p>
   </div>
 </a>

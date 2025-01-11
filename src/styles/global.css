@@ -1,7 +1,7 @@
 :root {
-  --accent: 255, 87, 34; /* Modern orange */
-  --accent-light: 255, 204, 188; /* Light orange */
-  --accent-dark: 191, 54, 12; /* Dark orange */
+  --accent: 64, 156, 255;    /* Modern blue */
+  --accent-light: 179, 214, 255;  /* Light blue */
+  --accent-dark: 23, 89, 169;     /* Dark blue */
   --accent-gradient: linear-gradient(
     45deg,
     rgb(var(--accent)),
@@ -10,166 +10,63 @@
   );
 }
 
-html {
-  font-family: system-ui, sans-serif;
-}
-
-code {
-  font-family:
-    Menlo,
-    Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
-    monospace;
-}
-
-/* Default Mode */
-body {
-  background-color: #ffffff;
-  color: #1a202c;
-}
-
-a {
-  color: #3182ce;
-}
-
-a:hover {
-  color: #2b6cb0;
-}
-
-/* Dark Mode */
-.dark body {
-  background-color: #1a202c;
-  color: #f7fafc;
-}
-
-.dark a {
-  color: #d35400;
-}
-
-.dark a:hover {
-  color: #4299e1;
-}
-
-.dark .dark\:bg-gray-800 {
-  background-color: #2d3748;
-}
-
-.dark .dark\:text-gray-100 {
-  color: #f7fafc;
-}
-
-.dark .dark\:bg-gray-700 {
-  background-color: #4a5568;
-}
-
-.dark .dark\:bg-gray-900 {
-  background-color: #1a202c;
-}
-
-.dark .dark\:bg-indigo-600 {
-  background-color: #5a67d8;
-}
-
-.dark .dark\:text-indigo-300 {
-  color: #b2b7ff;
-}
-
-.dark .dark\:hover\:bg-gray-600:hover {
-  background-color: #718096;
-}
-
-.dark .dark\:hover\:bg-indigo-400:hover {
-  background-color: #667eea;
-}
-
 /* Light Mode */
 .light body {
-  background-color: #fff5eb;
-  color: #1a202c;
+  background-color: #f8fafc;
+  color: #1e293b;
 }
 
 .light a {
-  color: #d35400;
+  color: #0066cc;
 }
 
 .light a:hover {
-  color: #a04000;
+  color: #004999;
 }
 
-.light .light\:bg-50 {
-  background-color: #fff5eb;
+.light .light\:bg-50 { background-color: #f8fafc; }
+.light .light\:bg-100 { background-color: #f1f5f9; }
+.light .light\:bg-200 { background-color: #e2e8f0; }
+.light .light\:bg-300 { background-color: #cbd5e1; }
+.light .light\:bg-400 { background-color: #94a3b8; }
+
+/* Dark Mode */
+.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
 }
 
-.light .light\:text-gray-800 {
-  color: #1a202c;
+.dark a {
+  color: #60a5fa;
 }
 
-.light .light\:bg-100 {
-  background-color: #ffecd7;
+.dark a:hover {
+  color: #93c5fd;
 }
 
-.light .light\:bg-200 {
-  background-color: #ffd3a8;
-}
+.dark .dark\:bg-gray-800 { background-color: #1e293b; }
+.dark .dark\:bg-gray-700 { background-color: #334155; }
+.dark .dark\:bg-gray-900 { background-color: #0f172a; }
+.dark .dark\:bg-indigo-600 { background-color: #4f46e5; }
 
-.light .light\:bg-300 {
-  background-color: #ffb679;
-}
-
-.light .light\:bg-400 {
-  background-color: #ff9a4d;
-}
-
-.light .light\:text-white {
-  color: #ffffff;
-}
-
-.dark .light\:hover\:bg-gray-600:hover {
-  background-color: #718096;
-}
-
-.dark .light\:hover\:bg-indigo-400:hover {
-  background-color: #667eea;
-}
-
-/* Add styles for code blocks */
+/* Code Blocks */
 pre {
-  background-color: #2d2d2d; /* Dark background for code blocks */
-  color: #f8f8f2; /* Light text color */
-  padding: 1rem; /* Padding around code blocks */
-  border-radius: 0.5rem; /* Rounded corners */
-  overflow-x: auto; /* Horizontal scrolling for long code lines */
+  background-color: #1e293b;
+  color: #e2e8f0;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid #334155;
 }
 
-/* Add styles for inline code */
 code {
-  background-color: #2d2d2d; /* Dark background for inline code */
-  color: #f8f8f2; /* Light text color */
-  padding: 0.2rem 0.4rem; /* Padding around inline code */
-  border-radius: 0.3rem; /* Rounded corners */
+  background-color: #1e293b;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', Menlo, Monaco, monospace;
 }
 
-/* Optional: Add language-specific styles */
-.language-javascript {
-  color: #f1e05a; /* JavaScript code color */
-}
-
-.language-python {
-  color: #3572A5; /* Python code color */
-}
-
-.language-java {
-  color: #b07219; /* Java code color */
-}
-
-.language-rust {
-  color: #dea584; /* Rust code color */
-  code {
-    background-color: #000000; /* Dark background for Rust code */
-  }
-}
+/* Language-specific colors */
+.language-javascript { color: #ffd700; }
+.language-python { color: #4b8bbe; }
+.language-java { color: #f89820; }
+.language-rust { color: #dea584; }
 

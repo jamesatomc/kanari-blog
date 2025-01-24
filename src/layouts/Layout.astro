@@ -14,21 +14,33 @@ import "../styles/markdown.css";
         <meta charset="UTF-8" />
         <meta name="description" content="Kanari Network" />
         <meta name="viewport" content="width=device-width" />
+        <meta name="color-scheme" content="dark light" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';" />
+        
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preload" href="/fonts/fontawesome/css/all.min.css" as="style" />
+        <link rel="stylesheet" href="/fonts/fontawesome/css/all.min.css" />
+        
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
     <body>
         <slot />
     </body>
 </html>
 
-<script is:inline>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    mobileMenuButton?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
+            });
+        }
     });
 </script>

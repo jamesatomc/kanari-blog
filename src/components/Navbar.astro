@@ -23,6 +23,8 @@ class="mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-lg transition-all du
             <div class="sm:hidden">
                 <button
                     id="mobile-menu-button"
+                    aria-label="Toggle mobile menu"
+                    aria-expanded="false"
                     class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                     <svg
@@ -31,6 +33,7 @@ class="mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-lg transition-all du
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
+                        aria-hidden="true"
                     >
                         <path
                             stroke-linecap="round"
@@ -44,16 +47,18 @@ class="mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-lg transition-all du
             <div class="hidden sm:flex sm:items-center sm:space-x-4">
                 <button
                     onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
-                    class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-900 light-orange:bg-orange-800 light-orange:text-white hover:bg-gray-800 dark:hover:bg-gray-800 light-orange:hover:bg-orange-700 transition-colors"
+                    aria-label="Visit Kanari Network on GitHub"
+                    class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-gray-900 light-orange:bg-orange-800 light-orange:text-white hover:bg-gray-800 dark:hover:bg-gray-800 light-orange:hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700"
                 >
-                    <i class="fab fa-github mr-2"></i>
+                    <i class="fab fa-github mr-2" aria-hidden="true"></i>
                     GitHub
                 </button>
                 <button
                     onclick="window.open('https://bsky.app/profile/kanari.network', '_blank', 'noopener noreferrer')"
-                    class="bg-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-blue-600 light-orange:bg-orange-600 light-orange:text-white"
+                    aria-label="Visit Kanari Network on Bluesky"
+                    class="bg-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-blue-600 light-orange:bg-orange-600 light-orange:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                    <img src="/Bluesky_Logo.svg" alt="Bluesky Logo" class="w-5 h-5 mr-2" />
+                    <img src="/Bluesky_Logo.svg" alt="" class="w-5 h-5 mr-2" aria-hidden="true" />
                     Bluesky
                 </button>
                 <button

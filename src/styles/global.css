@@ -1,30 +1,30 @@
 :root {
-  --accent: 64, 156, 255;    /* Modern blue */
-  --accent-light: 179, 214, 255;  /* Light blue */
-  --accent-dark: 23, 89, 169;     /* Dark blue */
+  --accent: 37, 99, 235;      /* Blue 600 */
+  --accent-light: 96, 165, 250;  /* Blue 400 */
+  --accent-dark: 29, 78, 216;    /* Blue 700 */
   --accent-gradient: linear-gradient(
     45deg,
-    rgb(var(--accent)),
-    rgb(var(--accent-light)) 30%,
-    white 60%
+    rgb(var(--accent-dark)),
+    rgb(var(--accent)) 50%,
+    rgb(var(--accent-light)) 100%
   );
 }
 
 /* Light Mode */
 .light body {
-  background-color: #f8fafc;
+  background-color: #fafafa;
   color: #1e293b;
 }
 
 .light a {
-  color: #0066cc;
+  color: #2563eb;
 }
 
 .light a:hover {
-  color: #004999;
+  color: #1d4ed8;
 }
 
-.light .light\:bg-50 { background-color: #f8fafc; }
+.light .light\:bg-50 { background-color: #fafafa; }
 .light .light\:bg-100 { background-color: #f1f5f9; }
 .light .light\:bg-200 { background-color: #e2e8f0; }
 .light .light\:bg-300 { background-color: #cbd5e1; }
@@ -33,21 +33,21 @@
 /* Dark Mode */
 .dark body {
   background-color: #0f172a;
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 
 .dark a {
-  color: #60a5fa;
+  color: #3b82f6;
 }
 
 .dark a:hover {
-  color: #93c5fd;
+  color: #60a5fa;
 }
 
 .dark .dark\:bg-gray-800 { background-color: #1e293b; }
 .dark .dark\:bg-gray-700 { background-color: #334155; }
 .dark .dark\:bg-gray-900 { background-color: #0f172a; }
-.dark .dark\:bg-indigo-600 { background-color: #4f46e5; }
+.dark .dark\:bg-indigo-600 { background-color: #3b82f6; }
 
 /* Code Blocks */
 pre {

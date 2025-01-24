@@ -1,14 +1,18 @@
 ---
-const { href, imgSrc, imgAlt, title, description } = Astro.props;
+const { href, imgSrc, imgAlt, title, description, priority = false } = Astro.props;
 ---
 <a
   href={href}
   class="block p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 hover:scale-105 bg-white dark:bg-gray-800"
 >
-  <div class="relative h-48 bg-black dark:bg-gray-900 rounded-t-lg overflow-hidden">
+  <div class="relative aspect-video bg-black dark:bg-gray-900 rounded-t-lg overflow-hidden">
     <img
       src={imgSrc}
       alt={imgAlt}
+      width="800"
+      height="450"
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
       class="w-full h-full object-cover rounded-t-lg transition-transform duration-300 hover:scale-110"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black dark:from-gray-900 to-transparent rounded-t-lg"></div>

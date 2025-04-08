@@ -18,9 +18,25 @@ import "../styles/markdown.css";
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Cyberpunk fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Michroma&display=swap" rel="stylesheet">
     </head>
     <body>
+        <!-- Scan line container -->
+        <div class="fixed inset-0 pointer-events-none z-50 opacity-5">
+            <div class="absolute left-0 w-full h-1 bg-cyber-blue dark:bg-cyber-blue light:bg-cyber-pink shadow-lg animate-scan-line"></div>
+        </div>
+        
+        <!-- Glitch overlay -->
+        <div class="fixed inset-0 pointer-events-none z-40 bg-noise opacity-5"></div>
+        
         <slot />
+        
+        <!-- CRT effect corners -->
+        <div class="fixed top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink rounded-tl-3xl opacity-30 pointer-events-none"></div>
+        <div class="fixed top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink rounded-tr-3xl opacity-30 pointer-events-none"></div>
+        <div class="fixed bottom-0 left-0 w-20 h-20 border-b-4 border-l-4 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink rounded-bl-3xl opacity-30 pointer-events-none"></div>
+        <div class="fixed bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink rounded-br-3xl opacity-30 pointer-events-none"></div>
     </body>
 </html>
 
@@ -31,4 +47,13 @@ import "../styles/markdown.css";
     mobileMenuButton?.addEventListener('click', () => {
         mobileMenu?.classList.toggle('hidden');
     });
+    
+    // Add a noise background style
+    const style = document.createElement('style');
+    style.textContent = `
+        .bg-noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+    `;
+    document.head.appendChild(style);
 </script>

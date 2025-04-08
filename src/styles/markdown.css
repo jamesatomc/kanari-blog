@@ -1,8 +1,27 @@
-/* Markdown Styles */
+/* Cyberpunk Markdown Styles */
 .markdown-body {
-  font-family: system-ui, sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   line-height: 1.6;
-  color: #1a202c;
+  color: #E6E6FA;
+  position: relative;
+}
+
+.markdown-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 240, 255, 0.03) 0px,
+    rgba(0, 240, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: -1;
 }
 
 .markdown-body h1,
@@ -11,47 +30,90 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
+  font-family: 'Orbitron', sans-serif;
   font-weight: bold;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: #00F0FF;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.markdown-body h1::before,
+.markdown-body h2::before,
+.markdown-body h3::before {
+  content: ">";
+  color: #FF00A0;
+  position: absolute;
+  left: 0;
 }
 
 .markdown-body p {
   margin-top: 0;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .markdown-body a {
-  color: #3182ce;
+  color: #00F0FF;
   text-decoration: none;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+  transition: all 0.2s;
+  position: relative;
 }
 
 .markdown-body a:hover {
-  color: #2b6cb0;
-  text-decoration: underline;
+  color: #FF00A0;
+  text-shadow: 0 0 5px rgba(255, 0, 160, 0.5);
+  border-bottom: 1px solid rgba(255, 0, 160, 0.7);
 }
 
 .markdown-body pre {
-  background-color: #2d2d2d;
-  color: #f8f8f2;
+  background-color: rgba(13, 13, 26, 0.9);
+  color: #00FF41;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   overflow-x: auto;
+  border-left: 3px solid #00F0FF;
+  font-family: 'Share Tech Mono', monospace;
+  position: relative;
+}
+
+.markdown-body pre::before {
+  content: 'CODE:';
+  display: block;
+  color: #FF00A0;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .markdown-body code {
-  background-color: #2d2d2d;
-  color: #f8f8f2;
+  background-color: rgba(13, 13, 26, 0.8);
+  color: #00FF41;
   padding: 0.2rem 0.4rem;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .markdown-body blockquote {
   margin: 0;
-  padding-left: 1rem;
-  border-left: 0.25rem solid #d35400;
-  color: #555;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 0.25rem solid #FF00A0;
+  color: #C0C0E0;
+  background-color: rgba(255, 0, 160, 0.1);
+  border-radius: 0 0.25rem 0.25rem 0;
+  position: relative;
+}
+
+.markdown-body blockquote::before {
+  content: '"';
+  font-size: 2rem;
+  color: rgba(255, 0, 160, 0.3);
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
 }
 
 .markdown-body ul,
@@ -63,43 +125,148 @@
 
 .markdown-body li {
   margin-bottom: 0.5rem;
+  position: relative;
 }
 
-/* Dark Mode Markdown Styles */
-.dark .markdown-body {
-  color: #f7fafc;
-  /* background-color: #1a202c; */
+.markdown-body ul li::marker {
+  color: #00F0FF;
 }
 
-.dark .markdown-body h1,
-.dark .markdown-body h2,
-.dark .markdown-body h3,
-.dark .markdown-body h4,
-.dark .markdown-body h5,
-.dark .markdown-body h6 {
-  color: #f7fafc;
+.markdown-body ol li::marker {
+  color: #FF00A0;
 }
 
-.dark .markdown-body a {
-  color: #d35400;
+/* Light Mode Cyberpunk Markdown Styles */
+.light .markdown-body {
+  color: #1A1A2E;
 }
 
-.dark .markdown-body a:hover {
-  color: #4299e1;
+.light .markdown-body::after {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 0, 160, 0.03) 0px,
+    rgba(255, 0, 160, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
 }
 
-.dark .markdown-body pre {
-  background-color: #2d3748;
-  color: #f7fafc;
+.light .markdown-body h1,
+.light .markdown-body h2,
+.light .markdown-body h3,
+.light .markdown-body h4,
+.light .markdown-body h5,
+.light .markdown-body h6 {
+  color: #FF00A0;
+  text-shadow: 0 0 5px rgba(255, 0, 160, 0.3);
 }
 
-.dark .markdown-body code {
-  background-color: #2d3748;
-  color: #f7fafc;
+.light .markdown-body h1::before,
+.light .markdown-body h2::before,
+.light .markdown-body h3::before {
+  content: ">";
+  color: #00F0FF;
 }
 
-.dark .markdown-body blockquote {
-  border-left: 0.25rem solid #d35400;
-  color: #f7fafc;
-  background-color: #2d3748;
+.light .markdown-body a {
+  color: #FF00A0;
+  border-bottom: 1px solid rgba(255, 0, 160, 0.3);
+}
+
+.light .markdown-body a:hover {
+  color: #00F0FF;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.7);
+}
+
+.light .markdown-body pre {
+  background-color: rgba(26, 26, 46, 0.9);
+  border-left: 3px solid #FF00A0;
+}
+
+.light .markdown-body pre::before {
+  color: #00F0FF;
+}
+
+.light .markdown-body code {
+  background-color: rgba(26, 26, 46, 0.1);
+}
+
+.light .markdown-body blockquote {
+  border-left: 0.25rem solid #00F0FF;
+  color: #1A1A2E;
+  background-color: rgba(0, 240, 255, 0.1);
+}
+
+.light .markdown-body blockquote::before {
+  color: rgba(0, 240, 255, 0.3);
+}
+
+.light .markdown-body ul li::marker {
+  color: #FF00A0;
+}
+
+.light .markdown-body ol li::marker {
+  color: #00F0FF;
+}
+
+/* Table styles */
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.markdown-body th {
+  background-color: rgba(0, 240, 255, 0.1);
+  color: #00F0FF;
+  font-weight: bold;
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 2px solid rgba(0, 240, 255, 0.5);
+}
+
+.markdown-body td {
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.light .markdown-body table {
+  border: 1px solid rgba(255, 0, 160, 0.3);
+}
+
+.light .markdown-body th {
+  background-color: rgba(255, 0, 160, 0.1);
+  color: #FF00A0;
+  border-bottom: 2px solid rgba(255, 0, 160, 0.5);
+}
+
+.light .markdown-body td {
+  border-bottom: 1px solid rgba(255, 0, 160, 0.2);
+}
+
+/* Images */
+.markdown-body img {
+  max-width: 100%;
+  border-radius: 0.25rem;
+  border: 1px solid #00F0FF;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  transition: all 0.3s;
+}
+
+.markdown-body img:hover {
+  transform: scale(1.02);
+  border-color: #FF00A0;
+  box-shadow: 0 0 20px rgba(255, 0, 160, 0.4);
+}
+
+.light .markdown-body img {
+  border: 1px solid #FF00A0;
+  box-shadow: 0 0 15px rgba(255, 0, 160, 0.3);
+}
+
+.light .markdown-body img:hover {
+  border-color: #00F0FF;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
 }

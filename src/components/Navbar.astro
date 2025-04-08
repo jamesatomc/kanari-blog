@@ -3,22 +3,25 @@
 ---
 
 <nav
-                class="mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-lg transition-all duration-300 
-        w-[calc(100%-40px)] m-2 backdrop-blur-md bg-white dark:bg-gray-900 
-        bg-opacity-90 dark:bg-opacity-90 shadow-lg hover:shadow-xl z-20"
+    class="mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-lg transition-all duration-300 
+    w-[calc(100%-40px)] m-2 backdrop-blur-lg bg-dark-card/90 dark:bg-dark-card/90 light:bg-light-card/90
+    border border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 
+    shadow-cyber dark:shadow-cyber light:shadow-cyber-pink z-20"
 >
     <div class="flex justify-between items-center">
         <div class="flex items-center">
             <a
                 href="/"
-                class="flex items-center font-medium text-gray-900 dark:text-white light-orange:text-orange-900"
+                class="flex items-center font-cyber font-medium text-cyber-blue dark:text-cyber-blue light:text-cyber-pink"
             >
-                <img
-                    src="/images/logo.png"
-                    alt="Kanari Blog Logo"
-                    class="h-12 w-12 mr-3 rounded"  
-                />
-                <span class="text-xl">Kanari Blog</span>
+                <div class="h-12 w-12 mr-3 rounded bg-dark-card border border-cyber-blue/50 dark:border-cyber-blue/50 light:border-cyber-pink/50 flex items-center justify-center overflow-hidden cyber-scanline">
+                    <img
+                        src="/images/logo.png"
+                        alt="Kanari Blog Logo"
+                        class="h-10 w-10 object-cover"  
+                    />
+                </div>
+                <span class="text-xl relative cyber-glitch">KANARI_NETWORK</span>
             </a>
         </div>
         <div class="flex items-center sm:space-x-4">
@@ -27,10 +30,10 @@
                     id="mobile-menu-button"
                     aria-label="Toggle mobile menu"
                     aria-expanded="false"
-                    class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    class="p-2 rounded-md text-cyber-blue dark:text-cyber-blue light:text-cyber-pink focus:outline-none"
                 >
                     <svg
-                        class="h-6 w-6 light:text-purple-600"
+                        class="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -49,35 +52,38 @@
                 <button
                     onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
                     aria-label="Visit Kanari Network on GitHub"
-                    class="bg-black text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-slate-950 light-orange:bg-orange-800 light-orange:text-white hover:bg-gray-800 dark:hover:bg-gray-800 light-orange:hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700"
+                    class="bg-dark-card text-cyber-blue border border-cyber-blue/50 px-3 py-2 rounded-sm text-sm font-cyber flex items-center hover:bg-cyber-blue/10 transition-colors focus:outline-none relative overflow-hidden group"
                 >
+                    <span class="absolute inset-0 bg-cyber-blue/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     <i class="fab fa-github mr-2" aria-hidden="true"></i>
-                    GitHub
+                    <span>GITHUB</span>
                 </button>
                 <button
                     onclick="window.open('https://bsky.app/profile/kanari.network', '_blank', 'noopener noreferrer')"
                     aria-label="Visit Kanari Network on Bluesky"
-                    class="bg-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-blue-600 light-orange:bg-orange-600 light-orange:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    class="bg-dark-card text-cyber-blue border border-cyber-blue/50 px-3 py-2 rounded-sm text-sm font-cyber flex items-center hover:bg-cyber-blue/10 transition-colors focus:outline-none relative overflow-hidden group"
                 >
+                    <span class="absolute inset-0 bg-cyber-blue/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     <img
                         src="/Bluesky_Logo.svg"
                         alt=""
                         class="w-5 h-5 mr-2"
                         aria-hidden="true"
                     />
-                    Bluesky
+                    <span>BLUESKY</span>
                 </button>
                 <button
                     onclick="window.open('https://discord.com/invite/QU6fTacXab', '_blank', 'noopener noreferrer')"
-                    class="bg-indigo-700 text-white px-3 py-2 rounded-md text-sm font-medium flex items-center dark:bg-indigo-700 light-orange:bg-orange-800 light-orange:text-white hover:bg-indigo-800 dark:hover:bg-indigo-800 light-orange:hover:bg-orange-900 transition-colors"
+                    class="bg-dark-card text-cyber-blue border border-cyber-blue/50 px-3 py-2 rounded-sm text-sm font-cyber flex items-center hover:bg-cyber-blue/10 transition-colors focus:outline-none relative overflow-hidden group"
                 >
+                    <span class="absolute inset-0 bg-cyber-blue/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     <i class="fab fa-discord mr-2"></i>
-                    Discord
+                    <span>DISCORD</span>
                 </button>
                 <button
                     id="mode-toggle"
                     aria-label="Toggle dark mode"
-                    class="relative bg-gray-200 text-gray-800 p-3 rounded-full flex items-center justify-center dark:bg-gray-800 dark:text-gray-100 light-orange:bg-orange-600 light-orange:text-white overflow-hidden transition-all duration-300 transform hover:scale-105"
+                    class="relative bg-dark-card text-cyber-blue p-2 rounded-sm flex items-center justify-center border border-cyber-blue/50 dark:border-cyber-blue/50 light:border-cyber-pink/50 overflow-hidden transition-all duration-300 hover:bg-cyber-blue/10"
                 >
                     <i
                         id="mode-icon"
@@ -87,42 +93,38 @@
             </div>
         </div>
     </div>
-    <div id="mobile-menu" class="sm:hidden hidden mt-2 ">
+    <div id="mobile-menu" class="sm:hidden hidden mt-4 border border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 bg-dark-card/90 dark:bg-dark-card/90 light:bg-light-card/90 rounded-sm p-2">
         <div class="px-2 py-3 flex justify-center space-x-4">
             {/* GitHub Button */}
             <button
                 onclick="window.open('https://github.com/kanari-network', '_blank', 'noopener noreferrer')"
-                class="relative text-gray-800 dark:text-white p-3 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:scale-110 hover:shadow-xl"
+                class="relative text-cyber-blue dark:text-cyber-blue light:text-cyber-pink p-3 rounded-sm flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:bg-cyber-blue/10"
             >
-                <span class="absolute inset-0 bg-gradient-to-br from-gray-700 via-gray-800 to-black opacity-0 transition-opacity duration-300 hover:opacity-90 rounded-full"></span>
-                <i class="fab fa-github text-xl relative z-10 "></i>
+                <i class="fab fa-github text-xl"></i>
             </button>
     
             {/* Bluesky Button */}
             <button
                 onclick="window.open('https://bsky.app/profile/kanari.network', '_blank', 'noopener noreferrer')"
-                class="relative text-blue-500 dark:text-blue-400 p-3 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:scale-110 hover:shadow-xl"
+                class="relative text-cyber-blue dark:text-cyber-blue light:text-cyber-pink p-3 rounded-sm flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:bg-cyber-blue/10"
             >
-                <span class="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 opacity-0 transition-opacity duration-300 hover:opacity-90 rounded-full"></span>
-                <img src="/Bluesky_Logo.svg" alt="Bluesky Logo" class="w-5 h-5 relative z-10 filter" />
+                <img src="/Bluesky_Logo.svg" alt="Bluesky Logo" class="w-5 h-5 filter" />
             </button>
     
             {/* Discord Button */}
             <button
                 onclick="window.open('https://discord.com/invite/QU6fTacXab', '_blank', 'noopener noreferrer')"
-                class="relative text-indigo-500 dark:text-indigo-400 p-3 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:scale-110 hover:shadow-xl"
+                class="relative text-cyber-blue dark:text-cyber-blue light:text-cyber-pink p-3 rounded-sm flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:bg-cyber-blue/10"
             >
-                <span class="absolute inset-0 bg-gradient-to-br from-indigo-400 via-indigo-500 to-indigo-600 opacity-0 transition-opacity duration-300 hover:opacity-90 rounded-full"></span>
-                <i class="fab fa-discord text-xl relative z-10"></i>
+                <i class="fab fa-discord text-xl"></i>
             </button>
     
             {/* Theme Toggle Button */}
             <button
                 id="mobile-mode-toggle"
-                class="relative p-3 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:scale-110 hover:shadow-xl text-white"
+                class="relative text-cyber-blue dark:text-cyber-blue light:text-cyber-pink p-3 rounded-sm flex items-center justify-center overflow-hidden transition-all duration-300 transform hover:bg-cyber-blue/10"
             >
-                <span class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-90 rounded-full"></span>
-                <i id="mobile-mode-icon" class="fas fa-moon text-xl relative z-10"></i>
+                <i id="mobile-mode-icon" class="fas fa-moon text-xl"></i>
             </button>
         </div>
     </div>
@@ -184,18 +186,29 @@
         document.documentElement.classList.add(modes[currentModeIndex]);
         updateIcons();
 
-        // Rest of the code remains the same...
         function updateIcons(): void {
             if (modes[currentModeIndex] === "dark") {
                 modeIcon?.classList.remove("fa-sun");
                 modeIcon?.classList.add("fa-moon");
                 mobileModeIcon?.classList.remove("fa-sun");
                 mobileModeIcon?.classList.add("fa-moon");
+                
+                // Update button colors for dark mode
+                modeToggle?.classList.remove("text-cyber-pink");
+                modeToggle?.classList.add("text-cyber-blue");
+                mobileModeToggle?.classList.remove("text-cyber-pink");
+                mobileModeToggle?.classList.add("text-cyber-blue");
             } else {
                 modeIcon?.classList.remove("fa-moon");
                 modeIcon?.classList.add("fa-sun");
                 mobileModeIcon?.classList.remove("fa-moon");
                 mobileModeIcon?.classList.add("fa-sun");
+                
+                // Update button colors for light mode
+                modeToggle?.classList.remove("text-cyber-blue");
+                modeToggle?.classList.add("text-cyber-pink");
+                mobileModeToggle?.classList.remove("text-cyber-blue");
+                mobileModeToggle?.classList.add("text-cyber-pink");
             }
         }
 

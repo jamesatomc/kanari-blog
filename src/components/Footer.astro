@@ -4,9 +4,15 @@
 
 <div class="pt-4 px-4 pb-4">
   <footer
-    class="backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-gray-100 border border-gray-200/50 dark:border-gray-700/50 rounded-2xl shadow-xl p-8 sm:p-10 transition-all duration-300"
+    class="backdrop-blur-lg bg-dark-card/90 dark:bg-dark-card/90 light:bg-light-card/90 
+    text-cyber-blue dark:text-cyber-blue light:text-cyber-pink 
+    border border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 
+    rounded-lg shadow-cyber dark:shadow-cyber light:shadow-cyber-pink p-8 sm:p-10 
+    transition-all duration-300 relative overflow-hidden"
   >
-    <div class="mx-auto w-full max-w-screen-xl py-6 lg:py-8">
+    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyber-blue dark:via-cyber-blue light:via-cyber-pink to-transparent"></div>
+    
+    <div class="mx-auto w-full max-w-screen-xl py-6 lg:py-8 relative z-10">
       <!-- Logo Section -->
       <div class="md:flex md:justify-between">
         <div class="mb-8 md:mb-0 group">
@@ -15,15 +21,15 @@
             class="flex items-center"
             aria-label="Kanari Network Home"
           >
-            <img
-              src="/images/logo.png"
-              class="h-10 w-10 mr-3 transform group-hover:rotate-6 transition-transform"
-              alt="Kanari Network Logo"
-            />
-            <span
-              class="text-2xl font-bold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300"
-            >
-              Kanari Network
+            <div class="h-10 w-10 mr-3 rounded bg-dark-card border border-cyber-blue/50 dark:border-cyber-blue/50 light:border-cyber-pink/50 flex items-center justify-center overflow-hidden cyber-scanline">
+              <img
+                src="/images/logo.png"
+                class="h-8 w-8 object-cover transform group-hover:scale-110 transition-transform"
+                alt="Kanari Network Logo"
+              />
+            </div>
+            <span class="text-2xl font-cyber font-bold cyber-glitch">
+              KANARI_NETWORK
             </span>
           </a>
         </div>
@@ -32,36 +38,36 @@
         <div class="grid grid-cols-2 gap-12 sm:gap-16 sm:grid-cols-3">
           <!-- Resources -->
           <div class="space-y-6">
-            <h2 class="text-sm font-bold uppercase tracking-wider">
-              Resources
+            <h2 class="text-sm font-cyber font-bold uppercase tracking-wider text-cyber-yellow dark:text-cyber-yellow light:text-cyber-orange">
+              RESOURCES
             </h2>
             <ul class="space-y-4">
               <li>
                 <a
                   href="#"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Developer portal</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >DEVELOPER_PORTAL</a
                 >
               </li>
               <li>
                 <a
                   href="https://docs.kanari.network/"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Docs</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >DOCS</a
                 >
               </li>
               <li>
                 <a
                   href="https://karimove.kanari.network/"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Kari Move</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >KARI_MOVE</a
                 >
               </li>
               <li>
                 <a
                   href="https://whitepaper.kanari.network/"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Whitepaper</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >WHITEPAPER</a
                 >
               </li>
             </ul>
@@ -69,29 +75,29 @@
 
           <!-- Solutions -->
           <div class="space-y-6">
-            <h2 class="text-sm font-bold uppercase tracking-wider">
-              Solutions
+            <h2 class="text-sm font-cyber font-bold uppercase tracking-wider text-cyber-yellow dark:text-cyber-yellow light:text-cyber-orange">
+              SOLUTIONS
             </h2>
             <ul class="space-y-4">
               <li>
                 <a
                   href="https://github.com/jamesatomc/walletkari"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Kanari Pay soon</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >KANARI_PAY_SOON</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >AI soon</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >AI_SOON</a
                 >
               </li>
               <li>
                 <a
                   href="https://github.com/kanari-network/kanari-network"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Blockchain</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >BLOCKCHAIN</a
                 >
               </li>
             </ul>
@@ -99,27 +105,27 @@
 
           <!-- About -->
           <div class="space-y-6">
-            <h2 class="text-sm font-bold uppercase tracking-wider">About</h2>
+            <h2 class="text-sm font-cyber font-bold uppercase tracking-wider text-cyber-yellow dark:text-cyber-yellow light:text-cyber-orange">ABOUT</h2>
             <ul class="space-y-4">
               <li>
                 <a
                   href="#"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Kanari Foundation</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >KANARI_FOUNDATION</a
                 >
               </li>
               <li>
                 <a
                   href="https://blog.kanari.network/"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Blog</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >BLOG</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="inline-block hover:translate-x-1 transition-transform hover:underline decoration-2 underline-offset-4"
-                  >Team</a
+                  class="inline-block hover:translate-x-2 transition-transform border-b border-cyber-blue/30 dark:border-cyber-blue/30 light:border-cyber-pink/30 pb-1 font-cyber-mono"
+                  >TEAM</a
                 >
               </li>
             </ul>
@@ -128,30 +134,30 @@
       </div>
 
       <!-- Divider -->
-      <hr
-        class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8"
-      />
+      <div class="my-8 w-full h-[1px] bg-gradient-to-r from-transparent via-cyber-blue/50 dark:via-cyber-blue/50 light:via-cyber-pink/50 to-transparent"></div>
 
       <!-- Copyright and Social -->
       <div
         class="sm:flex sm:items-center sm:justify-between max-w-screen-xl mx-auto px-4 py-6"
       >
-        <span class="text-sm sm:text-center text-gray-600 dark:text-gray-400">
-          © 2025 Kanari Network. All rights reserved. Made with ❤️ by the
+        <span class="text-sm sm:text-center font-cyber-mono text-gray-400 dark:text-gray-400 light:text-gray-600">
+          © 2077 KANARI_NETWORK. ALL_RIGHTS_RESERVED. MADE_WITH 
+          <span class="text-cyber-pink dark:text-cyber-pink light:text-cyber-blue animate-pulse">&hearts;</span> 
+          BY_THE
           <a
             href="https://kanari.network"
-            class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            class="font-medium text-cyber-blue dark:text-cyber-blue light:text-cyber-pink hover:text-cyber-yellow dark:hover:text-cyber-yellow light:hover:text-cyber-orange transition-colors duration-200"
           >
-            Kanari Network™
+            KANARI_NETWORK™
           </a>
-          . community.
+          COMMUNITY.
         </span>
 
         <div class="flex mt-4 sm:justify-center sm:mt-0 space-x-6">
           <!-- Bluesky -->
           <a
             href="https://bsky.app/profile/kanari.network"
-            class="transform transition duration-300 hover:scale-125"
+            class="transform transition duration-300 hover:scale-125 text-cyber-blue dark:text-cyber-blue light:text-cyber-pink hover:text-cyber-yellow dark:hover:text-cyber-yellow light:hover:text-cyber-orange"
           >
             <img src="/Bluesky_Logo.svg" alt="Bluesky Logo" class="w-5 h-5" />
           </a>
@@ -159,7 +165,7 @@
           <!-- Discord -->
           <a
             href="https://discord.gg/QU6fTacXab"
-            class="transform transition duration-300 hover:scale-125"
+            class="transform transition duration-300 hover:scale-125 text-cyber-blue dark:text-cyber-blue light:text-cyber-pink hover:text-cyber-yellow dark:hover:text-cyber-yellow light:hover:text-cyber-orange"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 21 16">
               <path
@@ -171,7 +177,7 @@
           <!-- Github -->
           <a
             href="https://github.com/kanari-network"
-            class="transform transition duration-300 hover:scale-125"
+            class="transform transition duration-300 hover:scale-125 text-cyber-blue dark:text-cyber-blue light:text-cyber-pink hover:text-cyber-yellow dark:hover:text-cyber-yellow light:hover:text-cyber-orange"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path
@@ -183,5 +189,20 @@
         </div>
       </div>
     </div>
+    
+    <!-- Scan line effect -->
+    <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyber-blue dark:via-cyber-blue light:via-cyber-pink to-transparent"></div>
+    
+    <!-- Corner decorations - top left -->
+    <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink"></div>
+    
+    <!-- Corner decorations - top right -->
+    <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink"></div>
+    
+    <!-- Corner decorations - bottom left -->
+    <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink"></div>
+    
+    <!-- Corner decorations - bottom right -->
+    <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink"></div>
   </footer>
 </div>

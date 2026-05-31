@@ -9,10 +9,18 @@ interface Props {
   title: string;
   description: string;
   contentHtml: string;
-  relatedHref: string;
-  relatedTitle: string;
-  relatedDescription: string;
-  relatedIndex: string;
+  previous?: {
+    href: string;
+    title: string;
+    description: string;
+    index: string;
+  };
+  next?: {
+    href: string;
+    title: string;
+    description: string;
+    index: string;
+  };
   kicker?: string;
   meta?: string;
   showArchitectureFlow?: boolean;
@@ -22,10 +30,8 @@ const {
   title,
   description,
   contentHtml,
-  relatedHref,
-  relatedTitle,
-  relatedDescription,
-  relatedIndex,
+  previous,
+  next,
   kicker = "SDK notes",
   meta = "Technical note",
   showArchitectureFlow = false,
@@ -53,15 +59,31 @@ const {
 
     <section class="related-section section-wrap">
       <div>
-        <p class="section-kicker">Keep reading</p>
-        <h2>More from the network.</h2>
+        <p class="section-kicker">Article navigation</p>
+        <h2>Keep exploring.</h2>
       </div>
-      <BlogPostLink
-        href={relatedHref}
-        title={relatedTitle}
-        description={relatedDescription}
-        index={relatedIndex}
-      />
+      <div class="article-navigation">
+        {previous && (
+          <BlogPostLink
+            href={previous.href}
+            title={previous.title}
+            description={previous.description}
+            index={previous.index}
+            category="Previous"
+            action="Previous article"
+          />
+        )}
+        {next && (
+          <BlogPostLink
+            href={next.href}
+            title={next.title}
+            description={next.description}
+            index={next.index}
+            category="Next"
+            action="Next article"
+          />
+        )}
+      </div>
     </section>
   </main>
   <Footer />

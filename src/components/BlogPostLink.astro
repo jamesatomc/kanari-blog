@@ -7,6 +7,7 @@ interface Props {
   description: string;
   index?: string;
   category?: string;
+  action?: string;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   description,
   index = "01",
   category = "SDK notes",
+  action = "Read article",
 } = Astro.props;
 ---
 
@@ -29,6 +31,6 @@ const {
   <div class="post-card__copy">
     <h2>{title}</h2>
     <p>{description}</p>
-    <strong>Read article <span aria-hidden="true">-&gt;</span></strong>
+    <strong>{action} <span aria-hidden="true">-&gt;</span></strong>
   </div>
 </a>

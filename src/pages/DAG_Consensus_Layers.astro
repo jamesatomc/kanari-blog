@@ -10,10 +10,12 @@ const contentHtml = await processMarkdown(post[0].rawContent());
   title="DAG Consensus Layers"
   description="Understand how application logic, DAG execution, committee decisions, data availability, persistence, and sync fit together."
   contentHtml={contentHtml}
-  relatedHref="/Architecture"
-  relatedTitle="Kanari DAG Architecture"
-  relatedDescription="Follow a signed transaction through vertices, quorum decisions, checkpoints, canonical replay, and persistence."
-  relatedIndex="03"
+  previous={{
+    href: "/Architecture",
+    title: "Kanari DAG Architecture",
+    description: "Follow a signed transaction through vertices, quorum decisions, checkpoints, canonical replay, and persistence.",
+    index: "03",
+  }}
   kicker="Consensus guide"
   meta="Layer reference"
 />

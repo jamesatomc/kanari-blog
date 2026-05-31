@@ -10,8 +10,10 @@ const contentHtml = await processMarkdown(post[0].rawContent());
   title="Inside the Kanari SDK"
   description="A map of the Rust workspace, Move runtime, DAG engine, RPC layers, and developer entry points."
   contentHtml={contentHtml}
-  relatedHref="/Kanari_SDK_Implementation"
-  relatedTitle="Building with KanariClient"
-  relatedDescription="Use the Flutter and Dart facade for queries, signed transactions, and Move function calls."
-  relatedIndex="02"
+  next={{
+    href: "/Kanari_SDK_Implementation",
+    title: "Building with KanariClient",
+    description: "Use the Flutter and Dart facade for queries, signed transactions, and Move function calls.",
+    index: "02",
+  }}
 />

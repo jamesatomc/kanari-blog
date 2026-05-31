@@ -10,8 +10,16 @@ const contentHtml = await processMarkdown(post[0].rawContent());
   title="Building with KanariClient"
   description="Use the Flutter and Dart facade for queries, signed transactions, and Move function calls."
   contentHtml={contentHtml}
-  relatedHref="/Kanari_SDK_Design"
-  relatedTitle="Inside the Kanari SDK"
-  relatedDescription="A map of the Rust workspace, Move runtime, DAG engine, RPC layers, and developer entry points."
-  relatedIndex="01"
+  previous={{
+    href: "/Kanari_SDK_Design",
+    title: "Inside the Kanari SDK",
+    description: "A map of the Rust workspace, Move runtime, DAG engine, RPC layers, and developer entry points.",
+    index: "01",
+  }}
+  next={{
+    href: "/Architecture",
+    title: "Kanari DAG Architecture",
+    description: "Follow a signed transaction through vertices, quorum decisions, checkpoints, canonical replay, and persistence.",
+    index: "03",
+  }}
 />

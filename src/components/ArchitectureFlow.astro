@@ -31,6 +31,26 @@ const layers = [
     description: "Finalized vertices become ordered history and are replayed into persistent state.",
   },
 ];
+
+const consensusLayers = [
+  ["01", "Application", "Move VM, smart contracts, signed transactions", "Ingress"],
+  ["02", "DAG execution", "DagEngine produces vertices and derives state roots", "Execute"],
+  ["03", "Consensus", "DagConsensus validates support and creates checkpoints", "Decide"],
+  ["04", "Data availability", "DagStore indexes vertices for sharing and recovery", "Persist"],
+];
+
+const rounds = [
+  ["Genesis", ["V0", "V1", "V2", "V3"]],
+  ["Round 01", ["V4", "V5", "V6", "V7"]],
+  ["Round 02", ["V8", "V9", "V10", "V11"]],
+  ["Round 03", ["V12", "V13", "V14", "V15"]],
+];
+
+const workers = [
+  ["A", "Tx1 / Tx4 / Tx7"],
+  ["B", "Tx2 / Tx5 / Tx8"],
+  ["C", "Tx3 / Tx6"],
+];
 ---
 
 <section class="architecture-flow" aria-labelledby="architecture-flow-title">
@@ -62,4 +82,61 @@ const layers = [
     <span>State update</span>
     <strong>Verified history, ready to persist.</strong>
   </div>
+
+  <section class="architecture-detail">
+    <div class="architecture-detail__heading">
+      <p class="section-kicker">Consensus stack</p>
+      <h2>DAG consensus layers.</h2>
+      <p>Each layer owns one narrow responsibility, from application intent to durable graph history.</p>
+    </div>
+    <div class="layer-stack">
+      {consensusLayers.map(([index, title, description, action]) => (
+        <article class="layer-card">
+          <span>{index}</span>
+          <div><h3>{title}</h3><p>{description}</p></div>
+          <strong>{action}</strong>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="architecture-detail">
+    <div class="architecture-detail__heading">
+      <p class="section-kicker">Graph progress</p>
+      <h2>Vertices move in rounds.</h2>
+      <p>Authorities produce vertices in parallel. Later rounds reference earlier work until a checkpoint can finalize history.</p>
+    </div>
+    <div class="round-grid">
+      {rounds.map(([round, vertices], roundIndex) => (
+        <article class="round-card">
+          <span>{round}</span>
+          <div>
+            {(vertices as string[]).map((vertex, vertexIndex) => (
+              <i class={roundIndex === 3 && vertexIndex < 3 ? "is-finalized" : ""}>{vertex}<small>Auth {vertexIndex + 1}</small></i>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+    <div class="checkpoint-banner"><span>Checkpoint 01</span><strong>Earlier vertices finalized by quorum.</strong></div>
+  </section>
+
+  <section class="architecture-detail architecture-detail--last">
+    <div class="architecture-detail__heading">
+      <p class="section-kicker">Execution model</p>
+      <h2>Parallel where it matters.</h2>
+      <p>Transactions remain ordered per sender while independent sender groups can execute across separate workers.</p>
+    </div>
+    <div class="execution-pool">Transaction pool <span>Tx1</span><span>Tx2</span><span>Tx3</span><span>Tx4</span><span>Tx5</span><span>Tx6</span></div>
+    <div class="worker-grid">
+      {workers.map(([sender, transactions], index) => (
+        <article class="worker-card">
+          <span>Worker 0{index + 1}</span>
+          <h3>Sender {sender}</h3>
+          <p>{transactions}</p>
+        </article>
+      ))}
+    </div>
+    <div class="execution-result"><span>ChangeSet merge</span><strong>Apply canonical state</strong></div>
+  </section>
 </section>

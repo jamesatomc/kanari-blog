@@ -2,6 +2,7 @@
 import Footer from "./Footer.astro";
 import Navbar from "./Navbar.astro";
 import BlogPostLink from "./BlogPostLink.astro";
+import ArchitectureFlow from "./ArchitectureFlow.astro";
 import Layout from "../layouts/Layout.astro";
 
 interface Props {
@@ -12,6 +13,9 @@ interface Props {
   relatedTitle: string;
   relatedDescription: string;
   relatedIndex: string;
+  kicker?: string;
+  meta?: string;
+  showArchitectureFlow?: boolean;
 }
 
 const {
@@ -22,6 +26,9 @@ const {
   relatedTitle,
   relatedDescription,
   relatedIndex,
+  kicker = "SDK notes",
+  meta = "Technical note",
+  showArchitectureFlow = false,
 } = Astro.props;
 ---
 
@@ -29,7 +36,7 @@ const {
   <Navbar />
   <main>
     <header class="article-hero section-wrap">
-      <p class="section-kicker">SDK notes</p>
+      <p class="section-kicker">{kicker}</p>
       <h1>{title}</h1>
       <p>{description}</p>
       <a href="/" class="text-link"><span aria-hidden="true">&lt;-</span> All articles</a>
@@ -38,8 +45,9 @@ const {
     <article class="article-shell section-wrap">
       <div class="article-shell__meta">
         <span>Kanari Network</span>
-        <span>Technical note</span>
+        <span>{meta}</span>
       </div>
+      {showArchitectureFlow && <ArchitectureFlow />}
       <div class="markdown-body" set:html={contentHtml} />
     </article>
 

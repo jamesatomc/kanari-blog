@@ -22,15 +22,29 @@ import Layout from "../layouts/Layout.astro";
       <div class="post-grid">
         <BlogPostLink
           href="/Kanari_SDK_Design"
-          title="Kanari SDK Design"
-          description="Explore the core nodes and architectural ideas behind the Kanari SDK."
+          title="Inside the Kanari SDK"
+          description="A map of the Rust workspace, Move runtime, DAG engine, RPC layers, and developer entry points."
           index="01"
         />
         <BlogPostLink
           href="/Kanari_SDK_Implementation"
-          title="Kanari SDK Implementation"
-          description="A practical walkthrough for rendering and presenting SDK documentation."
+          title="Building with KanariClient"
+          description="Use the Flutter and Dart facade for queries, signed transactions, and Move function calls."
           index="02"
+        />
+        <BlogPostLink
+          href="/Architecture"
+          title="Kanari DAG Architecture"
+          description="Follow a signed transaction through vertices, quorum decisions, checkpoints, canonical replay, and persistence."
+          index="03"
+          category="Architecture"
+        />
+        <BlogPostLink
+          href="/DAG_Consensus_Layers"
+          title="DAG Consensus Layers"
+          description="Understand application logic, execution, committee decisions, data availability, persistence, and sync."
+          index="04"
+          category="Consensus"
         />
       </div>
     </section>

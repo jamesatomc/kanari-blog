@@ -1,0 +1,65 @@
+---
+const layers = [
+  {
+    index: "01",
+    title: "Client",
+    label: "SignedTransaction",
+    description: "Applications prepare and sign a transaction before submitting it to the network.",
+  },
+  {
+    index: "02",
+    title: "BlockchainEngine",
+    label: "Pending transactions",
+    description: "The execution engine accepts signed work and keeps it ready for DAG production.",
+  },
+  {
+    index: "03",
+    title: "DagEngine",
+    label: "DagVertex",
+    description: "produce_vertex() selects work, executes it, and packages the result into a vertex.",
+  },
+  {
+    index: "04",
+    title: "DagConsensus",
+    label: "Quorum decision",
+    description: "Authorities validate graph relationships and evaluate committee support.",
+  },
+  {
+    index: "05",
+    title: "Checkpoint",
+    label: "Canonical replay",
+    description: "Finalized vertices become ordered history and are replayed into persistent state.",
+  },
+];
+---
+
+<section class="architecture-flow" aria-labelledby="architecture-flow-title">
+  <div class="architecture-flow__heading">
+    <p class="section-kicker">Transaction flow</p>
+    <h2 id="architecture-flow-title">Architecture at a glance.</h2>
+    <p>Follow one signed transaction from the application boundary to finalized state.</p>
+  </div>
+
+  <div class="architecture-flow__grid">
+    {layers.map((layer, index) => (
+      <>
+        <article class="architecture-node">
+          <span>{layer.index}</span>
+          <h3>{layer.title}</h3>
+          <p>{layer.description}</p>
+        </article>
+        {index < layers.length - 1 && (
+          <div class="architecture-connector" aria-hidden="true">
+            <span>{layer.label}</span>
+            <i></i>
+          </div>
+        )}
+      </>
+    ))}
+  </div>
+
+  <div class="architecture-result">
+    <span>State update</span>
+    <strong>Verified history, ready to persist.</strong>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import ArticlePage from "../components/ArticlePage.astro";
+import { processMarkdown } from "../utils/markdownProcessor";
+
+const post = await Astro.glob("../content/Kanari_Architecture.md");
+const contentHtml = await processMarkdown(post[0].rawContent());
+---
+
+<ArticlePage
+  title="Kanari DAG Architecture"
+  description="Follow a signed transaction through DAG vertices, quorum decisions, checkpoints, canonical replay, and persistence."
+  contentHtml={contentHtml}
+  relatedHref="/DAG_Consensus_Layers"
+  relatedTitle="DAG Consensus Layers"
+  relatedDescription="Understand application logic, execution, committee decisions, data availability, persistence, and sync."
+  relatedIndex="04"
+  kicker="Architecture"
+  meta="Consensus note"
+  showArchitectureFlow={true}
+/>

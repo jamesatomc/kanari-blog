@@ -1,0 +1,60 @@
+---
+import Footer from "./Footer.astro";
+import Navbar from "./Navbar.astro";
+import BlogPostLink from "./BlogPostLink.astro";
+import Layout from "../layouts/Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  contentHtml: string;
+  relatedHref: string;
+  relatedTitle: string;
+  relatedDescription: string;
+  relatedIndex: string;
+}
+
+const {
+  title,
+  description,
+  contentHtml,
+  relatedHref,
+  relatedTitle,
+  relatedDescription,
+  relatedIndex,
+} = Astro.props;
+---
+
+<Layout title={`${title} | Kanari Notes`} description={description}>
+  <Navbar />
+  <main>
+    <header class="article-hero section-wrap">
+      <p class="section-kicker">SDK notes</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <a href="/" class="text-link"><span aria-hidden="true">&lt;-</span> All articles</a>
+    </header>
+
+    <article class="article-shell section-wrap">
+      <div class="article-shell__meta">
+        <span>Kanari Network</span>
+        <span>Technical note</span>
+      </div>
+      <div class="markdown-body" set:html={contentHtml} />
+    </article>
+
+    <section class="related-section section-wrap">
+      <div>
+        <p class="section-kicker">Keep reading</p>
+        <h2>More from the network.</h2>
+      </div>
+      <BlogPostLink
+        href={relatedHref}
+        title={relatedTitle}
+        description={relatedDescription}
+        index={relatedIndex}
+      />
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,59 +1,37 @@
 ---
 interface Props {
-    title: string;
+  title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Notes, guides, and technical updates from Kanari Network.",
+} = Astro.props;
+
 import "../styles/global.css";
 import "../styles/markdown.css";
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Kanari Network" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <!-- Cyberpunk fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Michroma&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- Scan line container -->
-        <div class="fixed inset-0 pointer-events-none z-50 opacity-5">
-            <div class="absolute left-0 w-full h-1 bg-cyber-blue dark:bg-cyber-blue light:bg-cyber-pink shadow-lg animate-scan-line"></div>
-        </div>
-        
-        <!-- Glitch overlay -->
-        <div class="fixed inset-0 pointer-events-none z-40 bg-noise opacity-5"></div>
-        
-        <slot />
-        
-        <!-- CRT effect corners -->
-        <div class="fixed top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink rounded-tl-3xl opacity-30 pointer-events-none"></div>
-        <div class="fixed top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink rounded-tr-3xl opacity-30 pointer-events-none"></div>
-        <div class="fixed bottom-0 left-0 w-20 h-20 border-b-4 border-l-4 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink rounded-bl-3xl opacity-30 pointer-events-none"></div>
-        <div class="fixed bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-cyber-blue dark:border-cyber-blue light:border-cyber-pink rounded-br-3xl opacity-30 pointer-events-none"></div>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script is:inline>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.toggle("dark", savedTheme === "dark" || (!savedTheme && prefersDark));
+    </script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <div class="site-noise" aria-hidden="true"></div>
+      <slot />
+    </div>
+  </body>
 </html>
-
-<script is:inline>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuButton?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
-    });
-    
-    // Add a noise background style
-    const style = document.createElement('style');
-    style.textContent = `
-        .bg-noise {
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-    `;
-    document.head.appendChild(style);
-</script>

@@ -1,70 +1,17 @@
 ---
-import BlogPostLink from "../components/BlogPostLink.astro";
-import Footer from "../components/Footer.astro";
-import Navbar from "../components/Navbar.astro";
-import Layout from "../layouts/Layout.astro";
+import ArticlePage from "../components/ArticlePage.astro";
 import { processMarkdown } from "../utils/markdownProcessor";
 
-// Use Astro's built-in functionality to import Markdown
 const post = await Astro.glob("../content/Kanari_SDK_Implementation.md");
-const markdownContent = post[0].rawContent();
-
-// Process the Markdown content
-const contentHtml = await processMarkdown(markdownContent);
+const contentHtml = await processMarkdown(post[0].rawContent());
 ---
 
-<Layout title="Kanari SDK Implementation">
-  <div class="flex flex-col min-h-screen">
-    <Navbar />
-    <div class="h-24"></div>
-
-    <main class="flex-grow p-4 sm:p-6 lg:p-8 bg-gradient-to-r ">
-      <article
-          class="max-w-4xl mx-auto p-6 rounded-lg shadow-md prose lg:prose-xl prose-invert transition-colors duration-300"
-      >
-          <h1 class=" text-3xl font-bold mb-4 transition-colors duration-300">
-            Kanari SDK Implementation
-          </h1>
-          <div class="bg-black p-4 rounded-lg mb-4">
-              <img
-                  src="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
-                  alt="EP1 Image"
-                  class="w-full h-auto"
-              />
-          </div>
-          <div class="markdown-content" set:html={contentHtml} />
-      </article>
-      
-      <div class="h-20"></div>
-
-      <div class=" w-full h-full ">
-        <div class="max-w-7xl mx-auto">
-          <h1
-            class=" text-4xl font-bold mb-8 text-center"
-          >
-            What’s New at Kanari
-          </h1>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-            <BlogPostLink
-              href="/Kanari_SDK_Design"
-              imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari1.png"
-              imgAlt="EP1 Image"
-              title="Kanari SDK Design"
-              description="Explore the design principles and architecture of the Kanari SDK in this detailed blog post."
-            />
-
-            <BlogPostLink
-              href="/blog03"
-              imgSrc="https://raw.githubusercontent.com/kanari-network/about/main/kari2.png"
-              imgAlt="EP3 Image"
-              title="so"
-              description="Dive into the implementation details of the Kanari SDK in this comprehensive blog post."
-            />
-          </div>
-        </div>
-      </div>
-
-    </main>
-    <Footer />
-  </div>
-</Layout>
+<ArticlePage
+  title="Kanari SDK Implementation"
+  description="A practical walkthrough for rendering and presenting SDK documentation."
+  contentHtml={contentHtml}
+  relatedHref="/Kanari_SDK_Design"
+  relatedTitle="Kanari SDK Design"
+  relatedDescription="Explore the core nodes and architectural ideas behind the Kanari SDK."
+  relatedIndex="01"
+/>

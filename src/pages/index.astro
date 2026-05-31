@@ -3,38 +3,44 @@ import BlogPostLink from "../components/BlogPostLink.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import "../styles/global.css";
 ---
 
-<Layout title="Kanari Blog">
-    <div class="flex flex-col min-h-screen">
-        <Navbar />
-        <div class="h-24"></div>
-        <main class="flex-grow p-4 sm:p-6 lg:p-8 bg-gradient-to-r ">
-            <div class="max-w-7xl mx-auto">
-                <h1 class="text-4xl font-bold mb-8 text-center">
-                    Kanari Blog
-                </h1>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <BlogPostLink
-                        href="/Kanari_SDK_Design"
-                        imgSrc="/"
-                        imgAlt="EP1 Image"
-                        title="Kanari SDK Design"
-                        description="Explore the design principles and architecture of the Kanari SDK in this detailed blog post."
-                    />
+<Layout title="Kanari Notes" description="Guides, design notes, and technical updates from Kanari Network.">
+  <Navbar />
+  <main>
+    <section class="blog-hero section-wrap">
+      <p class="section-kicker">Kanari notes</p>
+      <h1>Ideas for an<br /><span>open network.</span></h1>
+      <p>Guides, SDK design notes, and practical updates for people building with Kanari.</p>
+    </section>
 
-                    <BlogPostLink
-                        href="/Kanari_SDK_Implementation"
-                        imgSrc="/"
-                        imgAlt="EP2 Image"
-                        title="Kanari SDK Implementation"
-                        description="Dive into the implementation details of the Kanari SDK in this comprehensive blog post."
-                    />
-                </div>
-            </div>
-        </main>
-        
-        <Footer />
-    </div>
+    <section class="articles-section section-wrap">
+      <div class="section-heading">
+        <p class="section-kicker">Latest updates</p>
+        <h2>Read what is moving.</h2>
+      </div>
+      <div class="post-grid">
+        <BlogPostLink
+          href="/Kanari_SDK_Design"
+          title="Kanari SDK Design"
+          description="Explore the core nodes and architectural ideas behind the Kanari SDK."
+          index="01"
+        />
+        <BlogPostLink
+          href="/Kanari_SDK_Implementation"
+          title="Kanari SDK Implementation"
+          description="A practical walkthrough for rendering and presenting SDK documentation."
+          index="02"
+        />
+      </div>
+    </section>
+
+    <section class="blog-cta section-wrap">
+      <p class="section-kicker">Build with Kanari</p>
+      <h2>Take the next idea<br /><span>on-chain.</span></h2>
+      <a class="button button--dark" href="https://docs.kanarinetwork.site/" target="_blank" rel="noreferrer">Read the docs <span aria-hidden="true">-&gt;</span></a>
+      <i aria-hidden="true"></i>
+    </section>
+  </main>
+  <Footer />
 </Layout>

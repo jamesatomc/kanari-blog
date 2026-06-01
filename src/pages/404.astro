@@ -1,0 +1,34 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Page not found | Kanari Notes"
+  description="The requested Kanari Notes page could not be found."
+>
+  <Navbar />
+  <main class="not-found-page section-wrap">
+    <section class="not-found-card">
+      <p class="section-kicker">404 / PAGE NOT FOUND</p>
+      <h1>
+        This note
+        <br />
+        <span>is not here.</span>
+      </h1>
+      <p>
+        The article may have moved, or the address may be incorrect. Return to
+        the notes homepage or continue exploring the Kanari Network.
+      </p>
+      <div class="hero-actions">
+        <a class="button button--light" href="/">BACK TO ARTICLES <b>→</b></a>
+        <a class="button button--ghost" href="https://kanarinetwork.site/">
+          NETWORK HOME <b>→</b>
+        </a>
+      </div>
+      <i aria-hidden="true"></i>
+    </section>
+  </main>
+  <Footer />
+</Layout>

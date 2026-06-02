@@ -214,7 +214,7 @@ button { font: inherit; }
 }
 
 @media (max-width: 700px) {
-  :root { --type-hero-title: clamp(60px, 15vw, 86px); }
+  :root { --type-hero-title: clamp(60px, 15vw, 86px); --type-section-title: clamp(50px, 13vw, 68px); }
   .section-wrap, .site-header { width: calc(100% - 24px); }
   .blog-hero { padding-top: 50px; }
 }

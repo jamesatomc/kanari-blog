@@ -25,6 +25,15 @@
 .markdown-body code { padding: 2px 6px; border: 1px solid rgba(17,27,24,.12); border-radius: 6px; color: #503eb8; background: rgba(202,189,255,.24); font-family: Consolas, "Courier New", monospace; font-size: .88em; }
 .markdown-body pre { max-width: 100%; margin: 24px 0; padding: 19px; overflow-x: auto; border: 1px solid rgba(255,255,255,.13); border-radius: 16px; color: rgba(255,255,255,.82); background: #111b18; line-height: 1.65; tab-size: 2; }
 .markdown-body pre code { padding: 0; border: 0; color: inherit; background: transparent; font-size: 13px; white-space: pre; overflow-wrap: normal; }
+.docs-code-frame { max-width: 100%; margin: 24px 0; overflow: hidden; position: relative; border: 1px solid color-mix(in srgb, var(--inverted-text) 13%, transparent); border-radius: 18px; background: var(--deep-green); box-shadow: 12px 14px 0 color-mix(in srgb, var(--deep-green) 10%, transparent); }
+.markdown-body .docs-code-block { margin: 0; padding: 19px 58px 19px 19px; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.docs-code-copy { width: 34px; height: 34px; display: inline-grid; place-items: center; position: absolute; z-index: 1; top: 14px; right: 14px; border: 1px solid color-mix(in srgb, var(--inverted-text) 14%, transparent); border-radius: 10px; color: color-mix(in srgb, var(--inverted-text) 82%, transparent); background: color-mix(in srgb, var(--deep-green) 82%, transparent); cursor: pointer; transition: transform 150ms ease, border-color 150ms ease, color 150ms ease, background 150ms ease; }
+.docs-code-copy::before, .docs-code-copy::after { content: ""; width: 10px; height: 10px; position: absolute; border: 1.5px solid currentColor; border-radius: 2px; }
+.docs-code-copy::before { transform: translate(-2px, -2px); }
+.docs-code-copy::after { transform: translate(3px, 3px); }
+.docs-code-copy:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--lime) 46%, transparent); color: var(--lime); background: color-mix(in srgb, var(--deep-green) 62%, var(--lime)); }
+.docs-code-copy[data-copied="true"]::before { width: 12px; height: 7px; border-width: 0 0 2px 2px; border-radius: 0; transform: translateY(-2px) rotate(-45deg); }
+.docs-code-copy[data-copied="true"]::after { display: none; }
 .markdown-body table { width: 100%; margin: 24px 0; border-spacing: 0; border-collapse: collapse; table-layout: fixed; font-size: 14px; }
 .markdown-body th, .markdown-body td { padding: 11px 13px; border: 1px solid var(--line); overflow-wrap: anywhere; text-align: left; }
 .markdown-body td code { white-space: normal; }
@@ -43,8 +52,9 @@
 .dark .markdown-body a:hover { color: #e2ff7e; }
 .dark .markdown-body hr, .dark .markdown-body th, .dark .markdown-body td, .dark .markdown-body img, .dark .markdown-body kbd, .dark .markdown-body details, .dark .markdown-body .footnotes { border-color: rgba(255,255,255,.16); }
 .dark .markdown-body blockquote { color: rgba(247,244,235,.7); background: rgba(202,189,255,.1); }
-.dark .markdown-body code { border-color: rgba(255,255,255,.12); color: #ddd4ff; background: rgba(202,189,255,.12); }
-.dark .markdown-body th { color: var(--ink); background: var(--lime); }
+.dark .markdown-body code { border-color: var(--line); color: var(--purple-strong); background: color-mix(in srgb, var(--purple) 12%, transparent); }
+.dark .markdown-body pre code { color: inherit; background: transparent; }
+.dark .markdown-body th { color: var(--on-accent); background: var(--lime); }
 .dark .markdown-body tr:nth-child(even) { background: rgba(255,255,255,.035); }
 .dark .markdown-body kbd, .dark .markdown-body details { background: rgba(255,255,255,.04); }
 

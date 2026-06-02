@@ -88,3 +88,26 @@ const {
   </main>
   <Footer />
 </Layout>
+
+<script>
+  const copiedTimers = new WeakMap<HTMLButtonElement, number>();
+
+  document.querySelectorAll<HTMLButtonElement>(".docs-code-copy").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const code = button.closest(".docs-code-frame")?.querySelector("pre")?.textContent?.trimEnd();
+      if (!code) return;
+
+      await navigator.clipboard.writeText(code);
+      button.dataset.copied = "true";
+      button.setAttribute("aria-label", "Copied code");
+
+      const previousTimer = copiedTimers.get(button);
+      if (previousTimer) window.clearTimeout(previousTimer);
+
+      copiedTimers.set(button, window.setTimeout(() => {
+        delete button.dataset.copied;
+        button.setAttribute("aria-label", "Copy code");
+      }, 1400));
+    });
+  });
+</script>

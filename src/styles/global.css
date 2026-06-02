@@ -164,6 +164,7 @@ button { font: inherit; }
 .dark .blog-hero > p:last-child, .dark .article-hero > p, .dark .site-footer p { color: var(--muted); }
 .dark .post-card, .dark .article-shell { border-color: var(--line); background: color-mix(in srgb, var(--ink) 4.5%, transparent); }
 .dark .post-card:nth-child(2n) { color: var(--on-accent); background: var(--purple); }
+.dark .post-card:nth-child(2n) p { color: color-mix(in srgb, var(--on-accent) 68%, transparent); }
 .dark .post-card:not(:nth-child(2n)) p { color: var(--muted); }
 .dark .article-shell__meta { border-color: var(--line); color: var(--lime); }
 .dark .architecture-flow { border-color: var(--line); }

@@ -173,6 +173,7 @@ button { font: inherit; }
 .dark .architecture-node { border-color: var(--line); background: color-mix(in srgb, var(--ink) 4.5%, transparent); }
 .dark .architecture-node:nth-of-type(3) { background: var(--purple); }
 .dark .architecture-node:nth-of-type(3) h3 { color: var(--on-accent); }
+.dark .architecture-node:nth-of-type(3) p { color: color-mix(in srgb, var(--on-accent) 68%, transparent); }
 .dark .architecture-node:not(:nth-of-type(3)) h3 { color: var(--ink); }
 .dark .architecture-node:not(:nth-of-type(3)) p { color: var(--muted); }
 .dark .architecture-connector span { color: var(--lime); background: color-mix(in srgb, var(--deep-green) 92%, var(--paper)); }
@@ -183,6 +184,7 @@ button { font: inherit; }
 .dark .layer-card:nth-child(2) { background: color-mix(in srgb, var(--purple) 14%, transparent); }
 .dark .layer-card:nth-child(3) { color: var(--on-accent); background: var(--lime); }
 .dark .layer-card:nth-child(3) h3 { color: var(--on-accent); }
+.dark .layer-card:nth-child(3) p { color: color-mix(in srgb, var(--on-accent) 68%, transparent); }
 .dark .layer-card:not(:nth-child(3)) h3, .dark .worker-card h3 { color: var(--ink); }
 .dark .layer-card:not(:nth-child(3)) p, .dark .worker-card p { color: var(--muted); }
 .dark .round-card i { border-color: var(--line); color: var(--ink); background: color-mix(in srgb, var(--ink) 5.5%, transparent); }
